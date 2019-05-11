@@ -35,9 +35,9 @@ export default class Logo extends Component {
       <Fragment>
         {withLink ?
           (
-            <Link styleName={mobile ? 'mobile' : 'logo'} data-tip data-for="logo" to={localisedUrl(locale, '/')}>
+            <a styleName={mobile ? 'mobile' : 'logo'} data-tip data-for="logo" href="/">
               {imgNode}
-            </Link>
+            </a>
           ) : (<div>{imgNode}</div>)
         }
       </Fragment>

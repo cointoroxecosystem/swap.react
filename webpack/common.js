@@ -77,7 +77,7 @@ const webpackConfig = {
     new ProgressBarPlugin({ clear: false }),
     new WebappWebpackPlugin({
       logo: 'favicon.png',
-      path: config.base,
+      path: config.basePath,
     }),
     new HtmlWebpackPlugin({
       title: 'Atomicswapwallet.io - Cryptocurrency Wallet with Atomic Swap Exchange',
