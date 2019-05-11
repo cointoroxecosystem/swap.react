@@ -2,13 +2,23 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/messaging'
 import 'firebase/database'
+import 'firebase/firestore'
 import { config } from './config/firebase'
 
+import axios from 'axios'
+
 import actions from 'redux/actions'
-import reducers from 'redux/core/reducers'
-import { request } from 'helpers'
+import { getState } from 'redux/core'
 import moment from 'moment/moment'
 
+import firestoreInstance from './firestore'
+
+import clientConfig from './config/firebase-client-config'
+
+import appConfig from 'app-config'
+
+
+const isWidgetBuild = appConfig && appConfig.isWidget
 
 const authorisation = () =>
   new Promise((resolve) =>
@@ -18,19 +28,31 @@ const authorisation = () =>
   )
 
 const getIPInfo = () =>
-  new Promise(async (resolve) => {
-    const ipResponse = await request.get('https://ipinfo.io/json')
+  axios
+    .get('https://json.geoiplookup.io')
+    .then((result) => {
+      // eslint-disable-next-line camelcase
+      const { ip, country_code } = result.data
+      return ({
+        ip,
+        locale: country_code,
+      })
+    })
+    .catch((error) => {
+      console.error('getIPInfo:', error)
 
-    const resultData = {
-      ip: ipResponse.ip,
-      locale: ipResponse.country === 'NO' ? 'EN' : ipResponse.country,
-    }
-    resolve(resultData)
-  })
+      return {
+        ip: 'None',
+        locale: 'EN',
+      }
+    })
 
-const sendData = (userId, dataBasePath, data) =>
+const sendData = (userId, dataBasePath, data, isDefault = true) =>
   new Promise(async (resolve) => {
-    const database = firebase.database()
+    const database = isDefault
+      ? firebase.database()
+      : firebase.database(window.clientDBinstance)
+
     const usersRef = database.ref(dataBasePath)
 
     usersRef.child(userId).set(data)
@@ -41,9 +63,23 @@ const sendData = (userId, dataBasePath, data) =>
       })
   })
 
+const setUserLastOnline = async () => {
+  const userID = await getUserID()
+  const data = {
+    lastOnline: moment().format('HH:mm:ss DD/MM/YYYY ZZ'),
+    unixLastOnline: moment().unix(),
+    lastUserAgent: navigator.userAgent,
+  }
+
+  sendData(userID, 'usersCommon', data)
+  firestoreInstance.updateUserData(data)
+}
+
 const askPermission = () =>
   new Promise(async (resolve) => {
     const messaging = firebase.messaging()
+
+    messaging.usePublicVapidKey('BLiLhKj7Re98YaB0IwfcUpwuYHqosbgjD0OGQojFW2rP5Vj_ncoAwa4NqQ1GQsVJ5EF53hL4u9D5ND_jRzRxhzI')
 
     await messaging.requestPermission()
       .then(() => messaging.getToken())
@@ -55,7 +91,12 @@ const askPermission = () =>
   })
 
 const initialize = () => {
-  firebase.initializeApp(config)
+  // window.clientDBinstance = firebase.initializeApp(clientConfig, 'widget-client')
+
+  const firebaseApp = firebase.initializeApp(config)
+  window.firebaseDefaultInstance = firebaseApp
+
+  firebase.firestore(firebaseApp)
 
   if (isSupported()) {
     navigator.serviceWorker
@@ -89,20 +130,49 @@ const getUserID = () =>
 const submitUserData = (dataBasePath = 'usersCommon', data = {}) =>
   new Promise(async resolve => {
     const userID = await getUserID()
-    const ipInfo = await getIPInfo()
     const date = moment().format('DD-MM-YYYY')
-    const gaTracker = actions.analytics.getTracker()
+    const gaID = actions.analytics.getClientId() || 'None'
 
     if (userID) {
       const sendResult = await sendData(userID, dataBasePath, {
         date,
-        gaID: gaTracker !== undefined ? gaTracker.get('clientId') : 'None',
-        ...ipInfo,
+        gaID,
         ...data,
       })
       resolve(sendResult)
     }
   })
+
+const submitUserDataWidget = async (dataBasePath = 'usersCommon') => {
+  if (!isWidgetBuild) {
+    return
+  }
+  const { user: { ethData: { address: ethAddress }, btcData: { address: btcAddress } } } = getState()
+
+  return new Promise(async resolve => {
+    const userID = await getUserID()
+    const data = {
+      ethAddress,
+      btcAddress,
+    }
+    const dataBasePathFormatted = `widgetUsers/${window.top.location.host}/${dataBasePath}`.replace(/[\.\#\$\[\]]/ig, '_') // eslint-disable-line
+
+    if (userID) {
+      const sendWidgetResultToDefaultDB = await sendData(userID, dataBasePathFormatted, data)
+      // const sendResult = await sendData(userID, dataBasePath, data, false) // send to client's firebase
+
+      const sendWidgetDataToFirestore = await firestoreInstance.updateUserData({
+        widgetUrl: window.top.location.host,
+        // eslint-disable-next-line no-useless-escape
+        widgetUrlFromRTDB: window.top.location.host.replace(/[\.\#\$\[\]]/ig, '_'),
+        ethAddress,
+        btcAddress,
+      })
+
+      resolve(sendWidgetResultToDefaultDB)
+    }
+  })
+}
 
 const signUpWithPush = (data) =>
   new Promise(async resolve => {
@@ -122,8 +192,8 @@ const signUpWithPush = (data) =>
     })
 
     if (sendResult) {
-      reducers.signUp.setSigned()
-      actions.analytics.dataEvent('pushSubscribed')
+      actions.firebase.setSigned()
+      actions.analytics.signUpEvent({ action: 'signed', type: 'push' })
     }
     resolve(sendResult)
   })
@@ -134,28 +204,45 @@ const signUpWithEmail = (data) =>
     const sendResult = submitUserData(dataBasePath, data)
 
     if (sendResult) {
-      reducers.signUp.setSigned()
-      actions.analytics.dataEvent('emailSubscribed')
+      actions.firebase.setSigned()
+      actions.analytics.signUpEvent({ action: 'signed', type: 'email' })
     }
     resolve(sendResult)
   })
+
+const checkIsIframe = () => {
+  let currentWindow
+
+  try {
+    currentWindow = window.self !== window.top
+  } catch (error) {
+    currentWindow = true
+  }
+
+  return currentWindow
+}
 
 const isSupported = () => {
   const isLocalNet = process.env.LOCAL === 'local'
   const isSupportedServiceWorker = 'serviceWorker' in navigator
   const isSafari = ('safari' in window)
+  const isIframe = checkIsIframe()
   const iOSSafari = /iP(ad|od|hone)/i.test(window.navigator.userAgent)
                   && /WebKit/i.test(window.navigator.userAgent)
                   && !(/(CriOS|FxiOS|OPiOS|mercury)/i.test(window.navigator.userAgent))
 
-  return !isLocalNet && isSupportedServiceWorker && !iOSSafari && !isSafari
+  return !isIframe && !isLocalNet && isSupportedServiceWorker && !iOSSafari && !isSafari
 }
 
 export default {
+  getUserID,
+  askPermission,
   getIPInfo,
   initialize,
   submitUserData,
+  submitUserDataWidget,
   isSupported,
   signUpWithPush,
   signUpWithEmail,
+  setUserLastOnline,
 }

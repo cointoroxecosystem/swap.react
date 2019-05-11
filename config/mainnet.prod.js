@@ -8,8 +8,9 @@ export default {
   local: 'online',
   dir: 'mainnet',
 
-  base: 'https://swap.online/',
-  publicPath: `https://swap.online${baseConfig.publicPath}`,
+  base: 'https://atomicswapwallet.io/wallet/',
+  basePath: 'https://atomicswapwallet.io/',
+  publicPath: `https://atomicswapwallet.io/wallet${baseConfig.publicPath}`,
 
   ...config,
 }

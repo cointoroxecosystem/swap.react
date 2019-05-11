@@ -9,14 +9,15 @@ export default {
   eos: {
     chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
     httpEndpoint: 'https://api.eosnewyork.io',
-    registerEndpoint: 'https://seven.swap.online/eos-mainnet/buyaccount',
+    registerEndpoint: 'https://seven.Atomicswapwallet.io/eos-mainnet/buyaccount',
     buyAccountPriceInBTC: 0.01,
     buyAccountPaymentRecipient: '1DVC5SrPjXkkcCUbBwQcTsrBprXJEpEneG',
   },
   telos: {
-    chainId: '6c8aacc339bf1567743eb9c8ab4d933173aa6dca4ae6b6180a849c422f5bb207',
-    httpEndpoint: 'https://seven.swap.online/telos-endpoint',
-    registerEndpoint: 'https://seven.swap.online/telos-testnet/newaccount',
+    chainId: '4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11',
+    httpEndpoint: 'https://api.eos.miami',
+    registerEndpoint: 'https://seven.Atomicswapwallet.io/telos-testnet/newaccount',
   },
-  swapsExplorer: 'https://seven.swap.online/swaps-testnet/state',
+  swapsExplorer: 'https://seven.Atomicswapwallet.io/swaps-testnet/state',
+  faucet: 'https://seven.Atomicswapwallet.io/faucet/mainnet/faucet/',
 }

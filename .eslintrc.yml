@@ -5,8 +5,6 @@ globals:
   describe: true
   it: true
 
-parser: babel-eslint
-
 plugins:
   - jsx-a11y
   - react

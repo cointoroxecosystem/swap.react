@@ -15,15 +15,21 @@ import swapsExplorer from './swapsExplorer'
 import api from './api'
 import tips from './tips'
 import * as utils from './utils'
-
 // Methods
 import ignoreProps from './ignoreProps'
-
+import handleGoTrade from './handleGoTrade'
+import firebase from './firebase'
 // Getters
 import getPageOffset from './getPageOffset'
 import getScrollBarWidth from './getScrollBarWidth'
+import paddingForSwapList from './paddingForSwapList'
+import estimateFeeValue from './estimateFeeValue'
 
 import { migrate } from './migrations/'
+
+import getUnixTimeStamp from './getUnixTimeStamp'
+import { cacheStorageGet, cacheStorageSet } from './cache'
+
 
 export default {
   eos,
@@ -33,6 +39,8 @@ export default {
   eth,
   ethToken,
   ltc,
+  handleGoTrade,
+  estimateFeeValue,
 }
 
 export {
@@ -56,8 +64,15 @@ export {
   migrate,
   // Methods
   ignoreProps,
+  handleGoTrade,
+  firebase,
 
   // Getters
   getPageOffset,
   getScrollBarWidth,
+  paddingForSwapList,
+
+  getUnixTimeStamp,
+  cacheStorageGet,
+  cacheStorageSet,
 }

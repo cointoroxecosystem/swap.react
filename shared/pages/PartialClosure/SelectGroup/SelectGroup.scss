@@ -16,22 +16,43 @@
   font-size: 15px;
   color: #828795;
   position: absolute;
-}
-
-@include media-mobile {
-  .currencySelect {
-    width: 130px;
-  }
+  top: 14px;
+  padding: 5px;
+  font-size: 16px;
+  // box-shadow: -20px 0px 20px -14px rgba(0,0,0, 0.5);
 }
 
 .inputRoot {
   min-width: 0;
   flex: auto 1 1;
+  input {
+    padding-right: 75px;
+  }
 }
 
 .inputContainer {
   border-radius: 6px 0 0 6px !important;
   box-shadow: none !important;
+}
+
+.textForNull {
+  font-size: 10px;
+  position: absolute;
+  left: -1px;
+  margin-top: 70px;
+  width: 350px;
+}
+
+.balance {
+  position: absolute;
+  left: -1px;
+  margin-top: 70px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.red {
+  color: red,
 }
 
 input:disabled {
@@ -40,4 +61,24 @@ input:disabled {
 
 .currencySelect {
   border-radius: 0 6px 6px 0 !important;
+}
+
+@include media-mobile {
+  .currencySelect {
+    width: 130px;
+  }
+  .textUsd {
+    font-size: 14px;
+  }
+  .inputRoot {
+    input {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  .textUsd {
+    top: 0px;
+    font-size: 12px;
+    right: 135px;
+  }
 }

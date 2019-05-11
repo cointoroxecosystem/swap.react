@@ -7,8 +7,7 @@ import { links } from 'helpers'
 import CSSModules from 'react-css-modules'
 import styles from './Logo.scss'
 
-import logoImage from './images/logo.svg'
-import coloredLogoImage from './images/logo-colored.svg'
+import logoImage from './images/logoAtomic.png'
 import { injectIntl } from 'react-intl'
 import { localisedUrl } from 'helpers/locale'
 
@@ -28,17 +27,17 @@ export default class Logo extends Component {
 
     const imgNode = React.createElement('img', {
       styleName: !withLink && 'logo',
-      src: isColored ? coloredLogoImage : logoImage,
-      alt: 'swap.online logo',
+      src: logoImage,
+      alt: 'Atomicswapwallet.io logo',
     })
 
     return (
       <Fragment>
         {withLink ?
           (
-            <Link styleName={mobile ? 'mobile' : 'logo'} data-tip data-for="logo" to={localisedUrl(locale, '/')}>
+            <a styleName={mobile ? 'mobile' : 'logo'} data-tip data-for="logo" href="/">
               {imgNode}
-            </Link>
+            </a>
           ) : (<div>{imgNode}</div>)
         }
       </Fragment>

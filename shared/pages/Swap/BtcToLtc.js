@@ -48,7 +48,7 @@ export default class BtcToLtc extends Component {
       8: 'end',
     }
 
-    actions.analytics.swapEvent(stepNumbers[values.step], 'BTC2LTC')
+    // actions.analytics.swapEvent(stepNumbers[values.step], 'BTC2LTC')
 
     this.setState({
       flow: values,
@@ -371,7 +371,7 @@ export default class BtcToLtc extends Component {
                       <FormattedMessage id="MoneyWasTransferred" defaultMessage="6. LTC was transferred to your wallet. Check the balance." />
                     </h3>
                     <h2>
-                      <FormattedMessage id="Thank" defaultMessage="Thank you for using Swap.Online!" />
+                      <FormattedMessage id="Thank" defaultMessage="Thank you for using Atomicswapwallet.io!" />
                     </h2>
                   </Fragment>
                 )

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -7,7 +8,7 @@ import { connect } from 'redaction'
 
 import links from 'helpers/links'
 import actions from 'redux/actions'
-import { constants } from 'helpers'
+import { constants, firebase } from 'helpers'
 import config from 'app-config'
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl'
 import Tour from 'reactour'
@@ -22,6 +23,7 @@ import NavMobile from './NavMobile/NavMobile'
 
 import LogoTooltip from 'components/Logo/LogoTooltip'
 import WidthContainer from 'components/layout/WidthContainer/WidthContainer'
+import TourPartial from './TourPartial/TourPartial'
 
 import Logo from 'components/Logo/Logo'
 import { relocalisedUrl } from 'helpers/locale'
@@ -79,6 +81,8 @@ export default class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      optionsForOenSignUpModal: {},
+      isPartialTourOpen: false,
       path: false,
       isTourOpen: false,
       isShowingMore: false,
@@ -114,19 +118,75 @@ export default class Header extends Component {
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
 
-    if (process.env.MAINNET) {
-      const canShowSubscribeAndTour = (this.props.history.location.pathname === '/' || this.props.history.location.pathname === '/ru')
-        && !localStorage.getItem(constants.localStorage.firstStart)
-
-      if (canShowSubscribeAndTour && (config && !config.isWidget)) {
-        this.openSignUpModal()
-        localStorage.setItem(constants.localStorage.firstStart, true)
+    const checker = setInterval(() => {
+      switch (true) {
+        case !localStorage.getItem(constants.localStorage.wasOnExchange):
+        case !localStorage.getItem(constants.localStorage.wasOnWallet):
+          this.startTourAndSignInModal()
+          break
+        default:
+          clearInterval(checker)
       }
-    }
+    }, 3000)
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
+    this.startTourAndSignInModal()
+
+  }
+
+  startTourAndSignInModal = () => {
+    // if (!process.env.MAINNET || config.isWidget) {
+    //   return
+    // }
+
+    const currentUrl = this.props.history.location
+    const isGuestLink = !(!currentUrl.hash
+      || currentUrl.hash.slice(1) !== 'guest')
+
+    if (isGuestLink) {
+      localStorage.setItem(constants.localStorage.wasOnWallet, true)
+      localStorage.setItem(constants.localStorage.wasOnExchange, true)
+
+      return
+    }
+
+    const isStartPage = currentUrl.pathname === '/' || currentUrl.pathname === '/ru'
+    const isPartialPage = currentUrl.pathname.includes('/exchange/')
+    const didOpenSignUpModal = localStorage.getItem(constants.localStorage.didOpenSignUpModal)
+    const wasOnWallet = localStorage.getItem(constants.localStorage.wasOnWallet)
+    const wasOnExchange = localStorage.getItem(constants.localStorage.wasOnExchange)
+
+    switch (true) {
+      case isStartPage && !wasOnWallet:
+        this.startTourInNeed(didOpenSignUpModal, this.openWalletTour)
+        localStorage.setItem(constants.localStorage.wasOnWallet, true)
+        break
+      case isPartialPage && !wasOnExchange:
+        this.startTourInNeed(didOpenSignUpModal, this.openExchangeTour)
+        localStorage.setItem(constants.localStorage.wasOnExchange, true)
+        break
+      default: return
+    }
+
+    if (!didOpenSignUpModal) {
+      this.openSignUpModal(this.state.optionsForOenSignUpModal)
+    }
+  }
+
+  startTourInNeed = (didOpenSignUpModal, inNeedTourStarter) => {
+    if (!didOpenSignUpModal) {
+      this.optionsForOenSignUpModal(inNeedTourStarter)
+    } else {
+      inNeedTourStarter()
+    }
+  }
+
+  optionsForOenSignUpModal(inNeedTourStarter) {
+    this.setState(() => ({
+      optionsForOenSignUpModal: { onClose: inNeedTourStarter },
+    }))
   }
 
   declineRequest = (orderId, participantPeer) => {
@@ -173,24 +233,33 @@ export default class Header extends Component {
     this.setState({ isTourOpen: false })
   }
 
-  openSignUpModal = () => {
-    actions.modals.open(constants.modals.SignUp, { onClose: this.openTour })
+  openSignUpModal = (options) => {
+    localStorage.setItem(constants.localStorage.didOpenSignUpModal, true)
+    actions.modals.open(constants.modals.SignUp, options)
   }
 
-  openTour = () => {
+  openWalletTour = () => {
     this.setState({ isTourOpen: true })
+    console.warn('work!')
+
+  }
+
+  openExchangeTour = () => {
+    this.setState({ isPartialTourOpen: true })
   }
 
   render() {
 
-    const { sticky, menuItems, isTourOpen, isShowingMore, path } = this.state
+    const { sticky, menuItems, isTourOpen, isShowingMore, path, isPartialTourOpen } = this.state
     const { intl: { locale }, history, pathname, feeds, peer, isSigned, isInputActive } = this.props
 
     const accentColor = '#510ed8'
 
     if (config && config.isWidget) {
       return (
-        <User />
+        <User
+          acceptRequest={this.acceptRequest}
+          declineRequest={this.declineRequest} />
       )
     }
 
@@ -215,8 +284,9 @@ export default class Header extends Component {
           <LogoTooltip withLink />
           <Nav menu={menuItems} />
           <Logo withLink mobile />
+          <TourPartial isTourOpen={this.state.isPartialTourOpen} />
           <User
-            openTour={this.openTour}
+            openTour={this.openWalletTour}
             path={path}
             acceptRequest={this.acceptRequest}
             declineRequest={this.declineRequest}
@@ -243,7 +313,7 @@ const tourSteps = [
   },
   {
     selector: '[data-tut="reactour__save"]',
-    content: <FormattedMessage id="Header188" defaultMessage="Swap Online does NOT store your private keys, please download and keep them in a secured place" />,
+    content: <FormattedMessage id="Header188" defaultMessage="AtomicSwapWallet.io does NOT store your private keys, please download and keep them in a secured place" />,
   },
   {
     selector: '[data-tut="reactour__balance"]',

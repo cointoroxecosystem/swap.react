@@ -13,19 +13,29 @@ const sign = async () => {
   // const bchPrivateKey = localStorage.getItem(constants.privateKeyNames.bch)
   const ltcPrivateKey = localStorage.getItem(constants.privateKeyNames.ltc)
   const ethPrivateKey = localStorage.getItem(constants.privateKeyNames.eth)
-  const _ethPrivateKey = actions.eth.login(ethPrivateKey)
+  const ethKeychainActivated = !!localStorage.getItem(constants.privateKeyNames.ethKeychainPublicKey)
+  const _ethPrivateKey = ethKeychainActivated ? await actions.eth.loginWithKeychain() : actions.eth.login(ethPrivateKey)
   // const xlmPrivateKey = localStorage.getItem(constants.privateKeyNames.xlm)
 
   // actions.xlm.login(xlmPrivateKey)
-  actions.btc.login(btcPrivateKey)
+  const btcKeychainActivated = !!localStorage.getItem(constants.privateKeyNames.btcKeychainPublicKey)
+  if (btcKeychainActivated) {
+    await actions.btc.loginWithKeychain()
+  } else {
+    actions.btc.login(btcPrivateKey)
+  }
   // actions.bch.login(bchPrivateKey)
   actions.usdt.login(btcPrivateKey)
   actions.ltc.login(ltcPrivateKey)
 
-  Object.keys(config.erc20)
-    .forEach(name => {
-      actions.token.login(_ethPrivateKey, config.erc20[name].address, name, config.erc20[name].decimals, config.erc20[name].fullName)
-    })
+  // if inside actions.token.login to call web3.eth.accounts.privateKeyToAccount passing public key instead of private key
+  // there will not be an error, but the address returned will be wrong
+  if (!ethKeychainActivated) {
+    Object.keys(config.erc20)
+      .forEach(name => {
+        actions.token.login(_ethPrivateKey, config.erc20[name].address, name, config.erc20[name].decimals, config.erc20[name].fullName)
+      })
+  }
   // await actions.nimiq.login(_ethPrivateKey)
 
   const eosSign = async () => {
@@ -47,19 +57,10 @@ const sign = async () => {
     const telosActivePrivateKey = localStorage.getItem(constants.privateKeyNames.telosPrivateKey)
     const telosActivePublicKey = localStorage.getItem(constants.privateKeyNames.telosPublicKey)
     const telosAccount = localStorage.getItem(constants.privateKeyNames.telosAccount)
-    const telosAccountActivated = localStorage.getItem(constants.localStorage.telosAccountActivated) === 'true'
 
     if (telosActivePrivateKey && telosActivePublicKey && telosAccount) {
       actions.tlos.login(telosAccount, telosActivePrivateKey, telosActivePublicKey)
-
-      if (!telosAccountActivated) {
-        await actions.tlos.activateAccount(telosAccount, telosActivePrivateKey, telosActivePublicKey)
-      }
-    } else {
-      const { accountName, activePrivateKey, activePublicKey } = await actions.tlos.loginWithNewAccount()
-      await actions.tlos.activateAccount(accountName, activePrivateKey, activePublicKey)
     }
-
     await actions.tlos.getBalance()
   }
 
@@ -126,7 +127,11 @@ const getExchangeRate = (sellCurrency, buyCurrency) =>
       resolve(exchangeRate)
     })
       .catch(() => {
-        resolve(1)
+        if (constants.customEcxchangeRate[sellCurrency.toLowerCase()] !== undefined) {
+          resolve(constants.customEcxchangeRate[sellCurrency])
+        } else {
+          resolve(1)
+        }
       })
   })
 
@@ -150,7 +155,7 @@ const getText = () => {
 
   let text = `
   You will need this instruction only in case of emergency (if you lost your keys) \r\n
-  please do NOT waste your time and go back to swap.online\r\n
+  please do NOT waste your time and go back to Atomicswapwallet.io\r\n
   \r\n
   \r\n
   \r\n
