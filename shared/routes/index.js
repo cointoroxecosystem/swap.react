@@ -21,10 +21,10 @@ const routes = (
   <Switch>
     <Route path={`${localisePrefix}${links.swap}/:buy-:sell/:orderId`} component={SwapComponent} />
 
-    <Route path={`${localisePrefix}/:fullName-wallet`} component={CurrencyWallet} />
+    <Route path={`${localisePrefix}${links.home}/:fullName-wallet`} component={CurrencyWallet} />
 
-    <Route path={`${localisePrefix}${links.home}:buy-:sell/:orderId`} component={Home} />
-    <Route path={`${localisePrefix}${links.home}:buy-:sell`} component={Home} />
+    <Route path={`${localisePrefix}${links.home}/:buy-:sell/:orderId`} component={Home} />
+    <Route path={`${localisePrefix}${links.home}/:buy-:sell`} component={Home} />
     <Route path={`${localisePrefix}${links.exchange}/:sell-to-:buy`} component={PartialClosure} />
     <Route path={`${localisePrefix}${links.exchange}`} component={PartialClosure} />
 

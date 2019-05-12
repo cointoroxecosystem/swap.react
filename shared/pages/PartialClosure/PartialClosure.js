@@ -593,9 +593,9 @@ export default class PartialClosure extends Component {
       : tradeTicker.split('-').reverse().join('-')
 
     if (isWidget) {
-      window.parent.location.replace(`${hostname}/${pathname}`)
+      window.parent.location.replace(`${hostname}/${links.home}/${pathname}`)
     } else {
-      this.props.history.push(localisedUrl(locale, `/${tradeTicker}`))
+      this.props.history.push(localisedUrl(locale, `${links.home}/${tradeTicker}`))
     }
   }
 
