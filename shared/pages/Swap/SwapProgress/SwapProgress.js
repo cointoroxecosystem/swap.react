@@ -159,13 +159,13 @@ export default class SwapProgress extends Component {
 
     switch (buyCurrency) {
       case 'BTC':
-        this.history.push(localisedUrl(this.locale, '/Bitcoin-wallet'))
+        this.history.push(localisedUrl(this.locale, `${links.home}/Bitcoin-wallet`))
         break
       case 'ETH':
-        this.history.push(localisedUrl(this.locale, '/Ethereum-wallet'))
+        this.history.push(localisedUrl(this.locale, `${links.home}/Ethereum-wallet`))
         break
       default:
-        this.history.push(localisedUrl(this.locale, `/${buyCurrency.toLowerCase()}-wallet`))
+        this.history.push(localisedUrl(this.locale, `${links.home}/${buyCurrency.toLowerCase()}-wallet`))
     }
   }
 
