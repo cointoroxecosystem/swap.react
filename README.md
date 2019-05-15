@@ -11,7 +11,7 @@ Atomic swap cryptocurrency protocol. Live version here: https://Atomicswapwallet
 
 1) Clone repository with submodules (swap.core)
 ```
-git clone --recurse-submodules https://github.com/swaponline/swap.react.git
+git clone --recurse-submodules https://github.com/cointoroxecosystem/swap.react.git
 ```
 
 2) Do `npm i` <br />
@@ -22,7 +22,7 @@ npm i
 
 3) Do `git submodule update` in swap.react directory
 
-4) For dev mode `npm run start`, for prod `npm run build`
+4) For dev mode `npm run start`, for prod `npm run build:mainnet`
 
 ```
 npm run start
