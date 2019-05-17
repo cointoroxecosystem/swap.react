@@ -46,33 +46,33 @@ export default class TourPartial extends Component {
 const tourSteps = [
   {
     selector: '[data-tut="have"]', //have currency
-    content: <FormattedMessage id="tourPartial94" defaultMessage="Please enter the amount you would like to sell and select the currency to sell. You can also sell currency from an external wallet." />,
+    content: <FormattedMessage id="tourPartial94" defaultMessage="Please select the currency & enter the amounts to sell." />,
   },
   {
     selector: '[data-tut="get"]',
-    content: <FormattedMessage id="tourPartial99" defaultMessage="Please enter the amount you would like to buy and select the currency to buy." />,
+    content: <FormattedMessage id="tourPartial99" defaultMessage="Please select the currency & enter the amounts to buy." />,
   },
   {
     selector: '[data-tut="status"]',
     content: <FormattedMessage
       id="tourPartial103"
-      defaultMessage="Here you can see the status of the search for exchange offers. When loading there will be `Searching orders...` shown. When the order is found, check the exchange rate here" />,
+      defaultMessage="You can view all exchange offers here. When loading there will be `Searching orders...` shown. You can check the exchange rates here when a matching order is found." />,
   },
   {
     selector: '[data-tut="togle"]',
-    content: <FormattedMessage id="tourPartial107" defaultMessage="Switch this button to receive funds after exchanging to the internal wallet on Atomicswapwallet.io or to another wallet" />,
+    content: <FormattedMessage id="tourPartial107" defaultMessage="This button allows you to receive exchanged funds directly to your AtomicSwapWallet.io wallet or external wallets." />,
   },
   {
     selector: '[data-tut="Exchange"]',
     content: <FormattedMessage
       id="tourPartial116"
-      defaultMessage="Switch this button to see the direct URL of the exchange operation. This is possible when the button is pink." />,
+      defaultMessage="This button allows you to access the direct URL of the exchange operation. This is possible when the button is shown in pink." />,
   },
   {
     selector: '[data-tut="Orderbook"]',
     content: <FormattedMessage
       id="tourPartial128"
-      defaultMessage="Click on this button to see the page with offers for exchange. Offers will be presented for the particular currencies. Also you can create your own offer on the offer page." />,
+      defaultMessage="Click on this button to see the page with offers for exchange. Offers will be presented for the particular currency you have selected. You can also create your own offers." />,
   },
 ]
 
