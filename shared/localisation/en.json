@@ -3168,21 +3168,21 @@
   },
   {
     "id": "Header184",
-    "message": "This is your personal bitcoin address. We do not store your private keys. Everything is kept in your browser. No server, no back-end, completely decentralized.",
+    "message": "This is your personal bitcoin address. We do not store your private keys. Everything is kept on your browser. No server, no back-end, completely decentralized.",
     "files": [
       "shared/components/Header/Header.js"
     ]
   },
   {
     "id": "Header188",
-    "message": "AtomicSwapWallet.io does NOT store your private keys, please download and keep them in a secured place",
+    "message": "AtomicSwapWallet.io does NOT store your private keys, please download and keep them in a secure place",
     "files": [
       "shared/components/Header/Header.js"
     ]
   },
   {
     "id": "Header192",
-    "message": "This is your bitcoin balance. You can close your browser, reboot your computer. Your funds will remain safe, just don't forget to save your private keys",
+    "message": "This is your bitcoin balance. You can close your browser and reboot your computer. Your funds will remain safe as long as you have saved your private keys",
     "files": [
       "shared/components/Header/Header.js"
     ]
@@ -3196,7 +3196,7 @@
   },
   {
     "id": "Header196",
-    "message": "You can store crypto with different blockchains including Bitcoin, Ethereum, EOS, Bitcoin Cash, Litecoin and various tokens",
+    "message": "You can store crypto with different blockchains including Bitcoin, Ethereum, EOS, Bitcoin Cash, Litecoin and various ERC20 tokens",
     "files": [
       "shared/components/Header/Header.js"
     ]
@@ -3210,7 +3210,7 @@
   },
   {
     "id": "Header205",
-    "message": "You will receive notifications regarding updates with your account (orders, transactions) and monthly updates about our project",
+    "message": "You will receive updates on your orders and transactions as well as occasional updates about our project",
     "files": [
       "shared/components/Header/Header.js"
     ]
@@ -3347,7 +3347,7 @@
   },
   {
     "id": "partial437",
-    "message": "Atomic Swap {full_name1} ({ticker_name1}) to {full_name2} ({ticker_name2}) Instant Exchange",
+    "message": "Atomic Swap {full_name1} ({ticker_name1}) to {full_name2} ({ticker_name2}) p2p Exchange",
     "files": [
       "shared/pages/PartialClosure/PartialClosure.js"
     ]
@@ -3382,14 +3382,14 @@
   },
   {
     "id": "PartialFeeValueWarn",
-    "message": "You will have to pay an additional miner fee up to {estimatedFeeValue} {haveCurrency}",
+    "message": "You will have to pay additional miners fees of up to {estimatedFeeValue} {haveCurrency}",
     "files": [
       "shared/pages/PartialClosure/PartialClosure.js"
     ]
   },
   {
     "id": "down57",
-    "message": "It seems like you're trying to save your private keys. Copy these keys and store them in a safe place such as a USB drive. You can also download it as a .txt file.",
+    "message": "Please copy these keys and store them in a safe place such as a USB drive. You can also download it as a .txt file.",
     "files": [
       "shared/components/modals/DownloadModal/DownloadModal.js"
     ]
@@ -3480,7 +3480,7 @@
   },
   {
     "id": "EthTokenToUsdt375",
-    "message": "Please note that USDT withdrawals may take awhile to mine and to propagate the network.\n                    Due to Omni Protocol properties, the transaction may show up at the OmniExplorer in up to 20 minutes.",
+    "message": "Please note that USDT withdrawals may take awhile to mine and to propagate the network.\n                    Due to Omni Protocol properties, the transaction may show up at the OmniExplorer only after about 20 minutes.",
     "files": [
       "shared/pages/Swap/EthTokenToUsdt.js"
     ]
@@ -3803,14 +3803,14 @@
   },
   {
     "id": "Wallet156",
-    "message": "Welcome to Atomicswapwallet.io, a decentralized cross-chain wallet powered with Atomic Swap technology. {br}Here, you can safely store and promptly exchange Bitcoin, Ethereum, EOS, USD, Tether, BCH, and numerous ERC-20 tokens. {br}{br}Atomicswapwallet.io does not store your keys or coins. Our wallet operates directly via your browser, with no installations or downloads necessary. {br}Atomicswapwallet.io is fully decentralized as (because)all the operations with tokens are executed via the IPFS network. {br}{br}Our wallet addresses a real multi-chain integration with decentralized order books. No third-parties, no proxy-token and no token wrapping required. {br}{br} Enjoy using the truly decentralized wallet and exchange with zero platform fees!",
+    "message": "Welcome to Atomicswapwallet.io, a decentralized cross-chain wallet powered with Atomic Swap technology. {br}Here, you can safely store and promptly exchange Bitcoin, Bitcoin Cash (coming soon), Litecoin, EOS, Telos, USDT, Ethereum and various ERC-20 tokens. {br}{br}Atomicswapwallet.io does not store your keys or coins. Our wallet operates directly via your browser, with no installations or downloads necessary. {br}All swap operations are executed via the IPFS network, allowing us to provide you with a truly decentralized and peer-to-peer coin exchange. {br}{br}No third-parties, no proxy-tokens and no token wrappings required. Start swapping your coins and tokens immediately. {br}{br} It's your coins, your keys. Be sure to save your private keys! Questions? Email us at support@atomicswapwallet.io.",
     "files": [
       "shared/pages/Wallet/Wallet.js"
     ]
   },
   {
     "id": "PartialClosure562",
-    "message": "Atomicswapwallet.io is a decentralized hot wallet powered by Atomic swap technology. Exchange Bitcoin, USD Tether, BCH, EOS within seconds. No commissions on exchanges (only miners fee). {br}{br}Atomicswapwallet.io uses IPFS-network for all the operational processes. {br}Seamlessly store, send, receive, and exchange your coins or tokens with other peers! {br}{br}",
+    "message": "Atomicswapwallet.io is a truly decentralized browser-based wallet supporting atomic swaps. Exchange Bitcoin, USD Tether, BCH, EOS, TLOS, ETH, and various ERC20 Tokens within seconds. No commissions on exchanges (only miners fee). {br}{br}Atomicswapwallet.io uses IPFS-network for all the operational processes. {br}Seamlessly store, send, receive, and exchange your coins or tokens with other peers in a decentralized manner. {br}{br}",
     "files": [
       "shared/pages/PartialClosure/PartialClosure.js"
     ]
@@ -4842,28 +4842,28 @@
   },
   {
     "id": "FooterAboutAgreements",
-    "message": "Agreements",
+    "message": "Terms of Use",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
   },
   {
     "id": "FooterAboutCompany",
-    "message": "About company",
+    "message": "About us",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
   },
   {
     "id": "FooterAboutContacts",
-    "message": "Contacts",
+    "message": "Contact us",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
   },
   {
     "id": "FooterAboutHeader",
-    "message": "About company",
+    "message": "Company",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
@@ -4940,7 +4940,7 @@
   },
   {
     "id": "FooterPartnershipForNewsWebsites",
-    "message": "Press Opportunities",
+    "message": "Media Partnerships",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
@@ -4975,14 +4975,14 @@
   },
   {
     "id": "FooterTechnologyWhitepaper",
-    "message": "Whitepaper",
+    "message": "Technical Documentation",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
   },
   {
     "id": "FooterTechnologyWiki",
-    "message": "Wiki",
+    "message": "Guide",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
@@ -5087,14 +5087,14 @@
   },
   {
     "id": "SecondStep",
-    "message": "On this step, the crypto goes not to your wallet {br}or to the wallet of your counterparty but directly to the swap contract",
+    "message": "On this step, coins will be directly {br}sent to the swap contract",
     "files": [
       "shared/pages/Swap/SwapList/steps/SecondStep.js"
     ]
   },
   {
     "id": "thirdStep",
-    "message": "Оn this step crypto is transferred from {br}the contract to your wallet and to the wallet {br} of your counterparty {br}",
+    "message": "Оn this step coins are transferred from {br}the contract to your wallet and to the wallet {br} of your counterparty {br}",
     "files": [
       "shared/pages/Swap/SwapList/steps/ThirdStep.js"
     ]
