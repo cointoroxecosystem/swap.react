@@ -313,15 +313,15 @@ const tourSteps = [
   },
   {
     selector: '[data-tut="reactour__save"]',
-    content: <FormattedMessage id="Header188" defaultMessage="AtomicSwapWallet.io does NOT store your private keys, please download and keep them in a secured place" />,
+    content: <FormattedMessage id="Header188" defaultMessage="AtomicSwapWallet.io does NOT store your private keys, please download and keep them in a secure place" />,
   },
   {
     selector: '[data-tut="reactour__balance"]',
-    content: <FormattedMessage id="Header192" defaultMessage="This is your bitcoin balance. You can close your browser, reboot your computer. Your funds will remain safe, just don't forget to save your private keys" />,
+    content: <FormattedMessage id="Header192" defaultMessage="This is your bitcoin balance. Remember to save your private keys!" />,
   },
   {
     selector: '[data-tut="reactour__store"]',
-    content: <FormattedMessage id="Header196" defaultMessage="You can store crypto of different blockchains including Bitcoin, Ethereum, EOS, Bitcoin Cash, Litecoin and various token" />,
+    content: <FormattedMessage id="Header196" defaultMessage="You can store various cryptocurrencies with different blockchains including Bitcoin, Ethereum, EOS, Bitcoin Cash, Litecoin and various ERC20 tokens." />,
   },
   {
     selector: '[data-tut="reactour__exchange"]',
