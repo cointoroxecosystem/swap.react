@@ -3803,7 +3803,7 @@
   },
   {
     "id": "Wallet156",
-    "message": "Welcome to Atomicswapwallet.io, a decentralized cross-chain wallet powered with Atomic Swap technology. {br}Here, you can safely store and promptly exchange Bitcoin, Bitcoin Cash (coming soon), Litecoin, EOS, Telos, USDT, Ethereum and various ERC-20 tokens. {br}{br}Atomicswapwallet.io does not store your keys or coins. Our wallet operates directly via your browser, with no installations or downloads necessary. {br}All swap operations are executed via the IPFS network, allowing us to provide you with a truly decentralized and peer-to-peer coin exchange. {br}{br}No third-parties, no proxy-tokens and no token wrappings required. Start swapping your coins and tokens immediately. {br}{br} It's your coins, your keys. Be sure to save your private keys! Questions? Email us at support@atomicswapwallet.io.",
+    "message": "Welcome to Atomicswapwallet.io, a decentralized cross-chain wallet powered with Atomic Swap technology. {br}{br}Atomicswapwallet.io does not store your keys or coins. Our wallet operates directly via your browser, with no installations or downloads necessary. {br}All swap operations are executed via the IPFS network, allowing us to provide you with a truly decentralized and peer-to-peer coin exchange between Bitcoin - Ethereum, Bitcoin - Litecoin, Bitcoin - ERC20 Tokens (atomic swaps for BCH, EOS, TLOS, ETH as base currencies will be provided soon). {br}{br}No third-parties, no proxy-tokens and no token wrappings required. {br}{br} It's your coins, your keys. Be sure to save your private keys! Questions? Email us at support@atomicswapwallet.io.",
     "files": [
       "shared/pages/Wallet/Wallet.js"
     ]
