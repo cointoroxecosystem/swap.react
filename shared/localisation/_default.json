@@ -4842,28 +4842,28 @@
   },
   {
     "id": "FooterAboutAgreements",
-    "message": "Agreements",
+    "message": "Terms of Use",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
   },
   {
     "id": "FooterAboutCompany",
-    "message": "About company",
+    "message": "About us",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
   },
   {
     "id": "FooterAboutContacts",
-    "message": "Contacts",
+    "message": "Contact us",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
   },
   {
     "id": "FooterAboutHeader",
-    "message": "About company",
+    "message": "Company",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
@@ -4940,7 +4940,7 @@
   },
   {
     "id": "FooterPartnershipForNewsWebsites",
-    "message": "Press Opportunities",
+    "message": "Media Partnerships",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
@@ -4975,14 +4975,14 @@
   },
   {
     "id": "FooterTechnologyWhitepaper",
-    "message": "Whitepaper",
+    "message": "Technical Documentation",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
   },
   {
     "id": "FooterTechnologyWiki",
-    "message": "Wiki",
+    "message": "Guide",
     "files": [
       "shared/components/Footer/Links/Links.js"
     ]
@@ -5087,14 +5087,14 @@
   },
   {
     "id": "SecondStep",
-    "message": "On this step, the crypto goes not to your wallet {br}or to the wallet of your counterparty but directly to the swap contract",
+    "message": "On this step, coins will be directly {br}sent to the swap contract",
     "files": [
       "shared/pages/Swap/SwapList/steps/SecondStep.js"
     ]
   },
   {
     "id": "thirdStep",
-    "message": "Оn this step crypto is transferred from {br}the contract to your wallet and to the wallet {br} of your counterparty {br}",
+    "message": "Оn this step coins are transferred from {br}the contract to your wallet and to the wallet {br} of your counterparty {br}",
     "files": [
       "shared/pages/Swap/SwapList/steps/ThirdStep.js"
     ]
