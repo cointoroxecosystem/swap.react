@@ -260,11 +260,9 @@ export default class Wallet extends Component {
               defaultMessage="
                 🎁 🎁 🎁 Thank you for using Atomicswapwallet.io!
                 Tell us about your experience with our service
-                and we will gift you $10 in BTC 🎁 🎁 🎁"
+                and we will gift you $5 in OROX 🎁 🎁 🎁"
             />
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSxJaIKbyfqf-kn7eRt-0jDPp0Wd2wgovrzRKQibCF6gY9bQ/viewform?usp=sf_link">
-              <FormattedMessage id="WalletPromoLinkText" defaultMessage="Open poll" />
-            </a>
+           
           </div>
         )}
 
@@ -286,29 +284,7 @@ export default class Wallet extends Component {
               <h2 styleName="informHeading">Wallet based on the Atomic Swap technology</h2>
               <FormattedMessage
                 id="Wallet156"
-                defaultMessage="Welcome to Atomicswapwallet.io, a decentralized cross-chain wallet based on the Atomic Swap technology.
-
-                Here you can safely store and promptly exchange Bitcoin, Ethereum, EOS, USD, Tether, BCH, and numerous ERC-20 tokens.
-
-
-                Atomicswapwallet.io doesn’t store your keys or tokens. Our wallet operates directly in at browser, so no additional installations or downloads are required.
-
-                The Atomicswapwallet.io service is fully decentralized as (because)all the operations with tokens are executed via the IPFS network.
-
-
-                Our team was the first who finalized Atomic Swaps with USDT and EOS in September 2018 and Litecoin blockchain was added in October 2018.
-
-                Our wallet addresses a real multi-chain integration with a decentralized order book, no third party involved in the exchange, no proxy-token and no token wrapping.
-
-                We can integrate any ERC-20 token of a project for free just in case of mutual PR-announcement.
-
-
-                In addition, we developed Swap.Button, a b2b-solution to exchange all kinds of tokens for Bitcoin and Ethereum.
-
-                Install Swap.Button html widget on your site and collect crypto investments for your project.
-
-
-                Start using https://Atomicswapwallet.io/ today and enjoy the power of true decentralization."
+                defaultMessage="Welcome to Atomicswapwallet.io, a decentralized cross-chain wallet supporting Atomic Swaps. {br}Safely store and promptly exchange Bitcoin, Ethereum, EOS, USD, Tether, BCH, and numerous ERC-20 tokens with other users. {br}{br}Atomicswapwallet.io does not store your keys or tokens. Our wallet operates directly on the browser with no additional installs or downloads required. {br}The services we provide are fully decentralized with all operations executed via the IPFS network. {br}{br}Our wallet integrates multiple blockchains on a single interface, allowing you to store, send, receive, and exchange your coins and tokens in a truly decentralized manner. No third-parties, no proxy-tokens, and no token-wrapping required.{br}{br} Please do not forget to save your private keys! We do not store any information about you or your keys and coins. Once you lose your keys, you will not be able to recover your funds!"
                 values={{
                   br: <br />,
                 }}
