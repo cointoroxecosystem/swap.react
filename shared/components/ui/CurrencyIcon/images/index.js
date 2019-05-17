@@ -15,7 +15,7 @@ import yup from './yup.svg'
 import kn from './kn.svg'
 import arn from './arn.svg'
 import lev from './lev.svg'
-import ltc from './ltc.svg'
+import ltc from './ltc.png'
 import bxb from './bxb.svg'
 import dcn from './dcn.svg'
 
@@ -23,7 +23,7 @@ import mkr from './mkr.png'
 import rep from './rep.svg'
 import zrx from './zrx.svg'
 import zil from './zil.svg'
-import golem from './gnt.png'
+import gnt from './gnt.png'
 
 import bat from './bat.png'
 import omg from './omg.png'
@@ -35,6 +35,7 @@ import tusd from './tusd.png'
 import dai from './dai.svg'
 import mth from './mth.png'
 import gusd from './gusd.png'
+import tlos from './tlos.png'
 
 
 export default {
@@ -67,7 +68,7 @@ export default {
   link,
   zrx,
   zil,
-  golem,
+  gnt,
   orox,
 
   usdc,
@@ -75,4 +76,5 @@ export default {
   dai,
   mth,
   gusd,
+  tlos,
 }
