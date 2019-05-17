@@ -30,7 +30,7 @@ import SwapApp from 'swap.app'
 @connect(
   ({
     rememberedOrders,
-    user: { ethData, btcData, /* bchData, */ tokensData, eosData, /* xlmData, */ telosData, nimData, usdtData, ltcData },
+    user: { ethData, btcData, /* bchData, */ tokensData,  /* eosData, */ /* xlmData, */ /* telosData, */ nimData, usdtData, ltcData },
     currencies: { items: currencies },
   }, { currency }) => ({
     currencies,
@@ -38,8 +38,8 @@ import SwapApp from 'swap.app'
       btcData,
       ethData,
       /* xlmData, */
-      eosData,
-      telosData,
+      /* eosData, */
+      /* telosData, */
       /* bchData, */
       ltcData,
       usdtData,
@@ -362,8 +362,8 @@ export default class Row extends Component {
             {fullName}
             <FormattedMessage
               id="RowWallet276"
-              defaultMessage=" node is down (You can not perform transactions). " />
-            <a href="https://wiki.swap.online/faq/bitcoin-node-is-down-you-cannot-make-transactions/">
+              defaultMessage=" node is down (You cannot perform transactions). " />
+            <a href="mailto:support@atomicswapwallet.io">
               <FormattedMessage
                 id="RowWallet282"
                 defaultMessage="Need help?" />
