@@ -476,7 +476,7 @@
   },
   {
     "id": "PreventMultiTabs",
-    "message": "You are only allowed to open one tab at a time!",
+    "message": "Such Tabs, Too Many",
     "files": [
       "shared/components/PreventMultiTabs/PreventMultiTabs.js"
     ]
