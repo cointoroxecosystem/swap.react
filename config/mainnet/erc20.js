@@ -24,11 +24,6 @@ export default {
     decimals: 18,
     fullName: 'TrueUSD',
   },
-  bnty: {
-    address: '0xd2d6158683aee4cc838067727209a0aaf4359de3',
-    decimals: 18,
-    fullName: 'Bounty0x',
-  },
   mth: {
     address: '0xaf4dce16da2877f8c9e00544c93b62ac40631f16',
     decimals: 5,
