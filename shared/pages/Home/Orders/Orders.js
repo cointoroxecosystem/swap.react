@@ -94,7 +94,7 @@ export default class Orders extends Component {
         actions.core.updateCore()
       },
       message: (
-        <FormattedMessage id="orders94s" defaultMessage="Are you sure you want to delete the order?" />
+        <FormattedMessage id="orders94s" defaultMessage="Are you sure you want to delete this order?" />
       ),
     })
   }
@@ -146,14 +146,14 @@ export default class Orders extends Component {
     const title = defineMessages({
       metaTitle: {
         id: 'Orders121',
-        defaultMessage: 'Atomic Swap {buyCurrencyFullName} ({buyCurrency}) to {sellCurrencyFullName} ({sellCurrency}) Instant Exchange',
+        defaultMessage: 'Atomic Swap {buyCurrencyFullName} ({buyCurrency}) to {sellCurrencyFullName} ({sellCurrency}) P2P Exchange',
       },
     })
     const description = defineMessages({
       metaDescription: {
         id: 'Orders127',
         defaultMessage: `Best exchange rate for {buyCurrencyFullName} ({buyCurrency}) to {sellCurrencyFullName} ({sellCurrency}).
-         Atomicswapwallet.io wallet provides instant exchange using Atomic Swap Protocol.`,
+         Atomicswapwallet.io wallet provides a truly peer-to-peer exchange using Atomic Swap Protocol.`,
       },
     })
 
@@ -175,7 +175,7 @@ export default class Orders extends Component {
         </div>
         { invalidPair &&
           <p>
-            <FormattedMessage id="Orders141" defaultMessage="No such ticker. Redirecting to SWAP-BTC exchange..." />
+            <FormattedMessage id="Orders141" defaultMessage="No such ticker. Redirecting to OROX-BTC exchange..." />
           </p>
         }
         <div styleName={buttonsRowStyleName}>
@@ -183,7 +183,7 @@ export default class Orders extends Component {
             {isVisible ?
               <FormattedMessage id="orders1499" defaultMessage="Hide" />
               :
-              <FormattedMessage id="Orders151" defaultMessage="my Orders" />}
+              <FormattedMessage id="Orders151" defaultMessage="My Orders" />}
           </Button>
           <Button gray styleName="button" onClick={this.createOffer}>
             <FormattedMessage id="orders128" defaultMessage="Create offer" />
