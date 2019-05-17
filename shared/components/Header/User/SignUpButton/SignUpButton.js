@@ -24,7 +24,7 @@ const SignUpButton = ({ mobile }) => (
           </a>
           <ReactTooltip id="main" type="light" effect="solid">
             <span>
-              <FormattedMessage id="ADDoffer22" defaultMessage="Start to real Swap" />
+              <FormattedMessage id="ADDoffer22" defaultMessage="Begin Swapping Coins" />
             </span>
           </ReactTooltip>
         </Fragment>
@@ -35,7 +35,7 @@ const SignUpButton = ({ mobile }) => (
           </button>
           <ReactTooltip id="sign-up" type="light" effect="solid">
             <span>
-              <FormattedMessage id="ADDoffer33" defaultMessage="Get subscribed for the Atomicswapwallet.io news" />
+              <FormattedMessage id="ADDoffer33" defaultMessage="Subscribe for notifications about your swaps!" />
             </span>
           </ReactTooltip>
           <button styleName="buttonMobile" onClick={handleSignUp} /* eslint-disable-line */ >
