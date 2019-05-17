@@ -23,10 +23,8 @@ const link = [
       link: links.footer.forstablecoin, title: <FormattedMessage id="FooterPartnershipForstablecoin" defaultMessage="Host dIEO" /> },
     /* Другим DEX (For DEXes) https://wiki.swap.online/for_dexs/ */
     { link: links.footer.fordexses, title: <FormattedMessage id="FooterPartnershipForDEXes" defaultMessage="Whitelabel Solution" /> },
-    /* Блокчейнам (For Blockchains) https://wiki.swap.online/for_blockchains/ */
-    { link: links.footer.forblockchains, title: <FormattedMessage id="FooterPartnershipForBlockchains" defaultMessage="List Coin" /> },
     /* Токенам (For ERC20 tokens) https://listing.Atomicswapwallet.io/ */
-    { link: links.footer.forerc20tokens, title: <FormattedMessage id="FooterPartnershipForERC20" defaultMessage="List Token" /> },
+    { link: links.footer.forerc20tokens, title: <FormattedMessage id="FooterPartnershipForERC20" defaultMessage="List ERC20 Token" /> },
     /* Виджет для криптосайтов (For news websites) https://widget.Atomicswapwallet.io/ */
     { link: links.footer.fornewswebsites, title: <FormattedMessage id="FooterPartnershipForNewsWebsites" defaultMessage="Press Opportunities" /> },
   ],
