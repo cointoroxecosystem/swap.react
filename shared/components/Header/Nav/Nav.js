@@ -57,9 +57,6 @@ export default class Nav extends Component {
               )
               )
           }
-          <a href={links.listing} styleName="link" target="_blank" rel="noreferrer noopener">
-            <FormattedMessage id="Nav88" defaultMessage="Listing" />
-          </a>
         </Fragment>
       </div>
     )
