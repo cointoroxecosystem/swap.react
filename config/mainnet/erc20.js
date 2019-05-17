@@ -1,4 +1,9 @@
 export default {
+    swap: {
+    address: '0x14a52cf6B4F68431bd5D9524E4fcD6F41ce4ADe9',
+    decimals: 18,
+    fullName: 'swap',
+  },
   orox: {
     address: '0x1c5b760f133220855340003b43cc9113ec494823',
     decimals: 18,
