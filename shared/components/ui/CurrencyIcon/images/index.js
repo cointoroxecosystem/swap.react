@@ -24,7 +24,7 @@ import mkr from './mkr.svg'
 import rep from './rep.svg'
 import zrx from './zrx.svg'
 import zil from './zil.svg'
-import golem from './golem.png'
+import golem from './gnt.png'
 
 import bat from './bat.png'
 import omisego from './omisego.png'
