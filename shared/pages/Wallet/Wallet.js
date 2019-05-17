@@ -284,7 +284,17 @@ export default class Wallet extends Component {
               <h2 styleName="informHeading">Wallet based on the Atomic Swap technology</h2>
               <FormattedMessage
                 id="Wallet156"
-                defaultMessage="Welcome to Atomicswapwallet.io, a decentralized cross-chain wallet supporting Atomic Swaps. {br}Safely store and promptly exchange Bitcoin, Ethereum, EOS, USD, Tether, BCH, and numerous ERC-20 tokens with other users. {br}{br}Atomicswapwallet.io does not store your keys or tokens. Our wallet operates directly on the browser with no additional installs or downloads required. {br}The services we provide are fully decentralized with all operations executed via the IPFS network. {br}{br}Our wallet integrates multiple blockchains on a single interface, allowing you to store, send, receive, and exchange your coins and tokens in a truly decentralized manner. No third-parties, no proxy-tokens, and no token-wrapping required.{br}{br} Please do not forget to save your private keys! We do not store any information about you or your keys and coins. Once you lose your keys, you will not be able to recover your funds!"
+                defaultMessage="Welcome to Atomicswapwallet.io, a decentralized cross-chain wallet supporting Atomic Swaps.
+
+Safely store and promptly exchange Bitcoin, Ethereum, EOS, USD, Tether, BCH, and numerous ERC-20 tokens with other users.
+
+Atomicswapwallet.io does not store your keys or tokens. Our wallet operates directly on the browser with no additional installs or downloads required.
+
+The services we provide are fully decentralized with all operations executed via the IPFS network.
+
+Our wallet integrates multiple blockchains on a single interface, allowing you to store, send, receive, and exchange your coins and tokens in a truly decentralized manner. No third-parties, no proxy-tokens, and no token-wrapping required.
+
+Please do not forget to save your private keys! We do not store any information about you or your keys and coins. Once you lose your keys, you will not be able to recover your funds!"
                 values={{
                   br: <br />,
                 }}
