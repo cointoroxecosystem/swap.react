@@ -22,7 +22,6 @@ const Footer = (props) => (
     <WidthContainer styleName="container">
       {(!config.isWidget && !isMainOrPartialPages(props.location.pathname)) && (<Referral address={props.userEthAddress} />)}
       {!config.isWidget && (<Links />)}
-      {!config.isWidget && (<SwitchLang />)}
       {!config.isWidget && (<SocialMenu />)}
       <Info {...props} />
       <span style={{ color: '#ffffff', fontSize: '12px' }}>{config.time}</span>
