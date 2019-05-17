@@ -30,17 +30,17 @@ import SwapApp from 'swap.app'
 @connect(
   ({
     rememberedOrders,
-    user: { ethData, btcData, bchData, tokensData, eosData, /* xlmData, */ telosData, nimData, usdtData, ltcData },
+    user: { ethData, btcData, /* bchData, */ tokensData, eosData, /* xlmData, */ telosData, nimData, usdtData, ltcData },
     currencies: { items: currencies },
   }, { currency }) => ({
-    currencies,
+   currencies,
     item: [
       btcData,
       ethData,
       /* xlmData, */
       eosData,
       telosData,
-      bchData,
+      /* bchData, */
       ltcData,
       usdtData,
       ...Object.keys(tokensData).map(k => (tokensData[k])),
