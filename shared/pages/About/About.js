@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl'
 
 const About = ({ address }) => (
   <section style={{ height: '100%' }}>
-    <iframe width="100%" height="750px" style={{ marginTop: "30px" }} title="wiki.swap.online" src={` https://wiki.swap.online/about-swap-online/`} frameBorder="0" />
+    <iframe width="100%" height="750px" style={{ marginTop: "30px" }} title="About AtomicSwapWallet.io" src={` https://medium.com/@cointorox/atomicswapwallet-io-your-coins-your-keys-cf2530bceb0/`} frameBorder="0" />
   </section>
 )
 
