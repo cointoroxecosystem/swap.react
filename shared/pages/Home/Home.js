@@ -47,7 +47,7 @@ export default class Home extends Component {
     const { buyCurrency, sellCurrency } = initialData || {}
 
     this.state = {
-      buyCurrency: buy || buyCurrency || 'swap',
+      buyCurrency: buy || buyCurrency || 'orox',
       sellCurrency: sell || sellCurrency || 'btc',
       invalidPair: false,
       isShow: false,
@@ -119,10 +119,10 @@ export default class Home extends Component {
     } else if (constants.tradeTicker.includes(`${buy}-${sell}`)) {
       this.setFilter(`${buy}-${sell}`)
     } else {
-      this.setFilter('swap-btc')
+      this.setFilter('orox-btc')
       this.setState(() => ({
         sellCurrency: 'btc',
-        buyCurrency: 'swap',
+        buyCurrency: 'orox',
         invalidPair: true,
       }))
     }
@@ -172,7 +172,7 @@ export default class Home extends Component {
                       title="What1 is atomic swap?"
                       width="700"
                       height="480"
-                      src="https://www.youtube.com/embed/Jhrb7xOT_7s"
+                      src="https://www.youtube.com/watch?v=fh-i8lVhN9o"
                       frameBorder="0"
                       allow="autoplay; encrypted-media"
                       allowFullScreen
