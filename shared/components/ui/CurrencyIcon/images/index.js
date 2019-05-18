@@ -7,7 +7,6 @@ import xlm from './xlm.svg'
 // import bch from './bch.svg'
 import nim from './nim.svg'
 import eos from './eos.png'
-import swap from './swap.png'
 import usdt from './usdt.png'
 import syc2 from './syc2.svg'
 import drt from './drt.svg'
@@ -36,7 +35,7 @@ import dai from './dai.svg'
 import mth from './mth.png'
 import gusd from './gusd.png'
 import tlos from './tlos.png'
-
+import ext from './exo.png'
 
 export default {
   btc,
@@ -77,4 +76,5 @@ export default {
   mth,
   gusd,
   tlos,
+  ext,
 }
