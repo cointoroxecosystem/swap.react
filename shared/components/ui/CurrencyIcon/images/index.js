@@ -36,7 +36,10 @@ import dai from './dai.svg'
 import mth from './mth.png'
 import gusd from './gusd.png'
 import tlos from './tlos.png'
-import ext from './exo.png'
+import ext from './ext.png'
+import bnt from './bnt.png'
+import dent from './dent.png'
+import snt from './snt.png'
 
 export default {
   btc,
@@ -78,4 +81,7 @@ export default {
   gusd,
   tlos,
   ext,
+  bnt,
+  dent,
+  snt,
 }
