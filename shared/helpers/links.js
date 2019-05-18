@@ -5,7 +5,7 @@ export default {
   currencyWallet: '/wallet/wallet',
   swap: '/wallet/swaps',
   feed: '/wallet/feed',
-  aboutus: '/about-us',
+  aboutus: 'https://Atomicswapwallet.io/about-us',
   listing: '/listing',
   test: 'https://testnet.Atomicswapwallet.io',
   main: 'https://Atomicswapwallet.io/',
