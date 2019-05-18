@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet'
 import { Link, Redirect } from 'react-router-dom'
 import { FormattedMessage, injectIntl } from 'react-intl'
 import { localisedUrl } from '../../helpers/locale'
+import { links } from 'helpers'
 
 import CSSModules from 'react-css-modules'
 import styles from './Currency.scss'
@@ -193,7 +194,7 @@ export default class Currency extends Component {
             <Row key={index} {...row} />
           )}
         />
-        <CloseIcon styleName="closeButton" onClick={() => this.props.history.push(localisedUrl(locale, '/'))} data-testid="CloseIcon" />
+        <CloseIcon styleName="closeButton" onClick={() => this.props.history.push(localisedUrl(locale, links.home))} data-testid="CloseIcon" />
       </section>
     )
   }
