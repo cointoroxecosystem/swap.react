@@ -2807,7 +2807,7 @@
   },
   {
     "id": "Wallet137",
-    "message": "AtomicSwapWallet.io - 100% Decentralized Browser-based Cryptocurrency Wallet Supporting P2P Coin Swaps.",
+    "message": "AtomicSwapWallet.io, Decentralized Browser-based Cryptocurrency Wallet Supporting P2P Coin Swaps.",
     "files": [
       "shared/pages/Wallet/Wallet.js"
     ]
@@ -3803,14 +3803,14 @@
   },
   {
     "id": "Wallet156",
-    "message": "Atomicswapwallet.io is a non-custodial (decentralized) browser-based cryptocurrency wallet supporting p2p swaps via Atomic Swaps. Atomicswapwallet.io does not store your data, keys or coins. It operates directly on your browser with no software or plugin installations and downloads required. All swap operations are executed via the IPFS network, allowing us to provide you with a truly decentralized and peer-to-peer coin and ERC20 token swapping experience. {br}{br} Currently Supported Swap Pairs: {br}Bitcoin ⇋ Ethereum or ERC20 Tokens or Litecoin. {br}Ethereum ⇋ Bitcoin or Litecoin. {br}Litecoin ⇋ Bitcoin or Ethereum. {br}USDT ⇋ ERC20 Tokens. {br}ERC20 Tokens ⇋ Bitcoin or USDT. {br}Swap Support for BCH, EOS, TLOS are coming soon. {br}{br}Zero platform fees, No third-parties, No proxy-tokens and No token wrappings involved. Please save your private keys at somewhere safe as once lost, your funds will be lost forever.",
+    "message": "Atomicswapwallet.io is a non-custodial (decentralized) browser-based cryptocurrency wallet supporting p2p swaps via Atomic Swaps. Atomicswapwallet.io does not store your data, keys or coins. It operates directly on your browser with no software or plugin installations and downloads required. All swap operations are executed via the IPFS network, allowing us to provide you with a truly decentralized and peer-to-peer coin and ERC20 token swapping experience. {br}{br} Currently Supported Swap Pairs: {br}Bitcoin ⇋ Ethereum or ERC20 or Litecoin. {br}Ethereum ⇋ Bitcoin or Litecoin. {br}Litecoin ⇋ Bitcoin or Ethereum. {br}USDT ⇋ ERC20 Tokens. {br}ERC20 Tokens ⇋ Bitcoin or USDT. {br}Swap Support for BCH, EOS, TLOS are coming soon. {br}{br}Zero platform fees, No third-parties, No proxy-tokens and No token wrappings involved. Please save your private keys at somewhere safe as once lost, your funds will be lost forever.",
     "files": [
       "shared/pages/Wallet/Wallet.js"
     ]
   },
   {
     "id": "PartialClosure562",
-    "message": "Exchange your coins and tokens with 0 platform fees and no third-parties involved. You only pay Miners Fees (transaction fees). {br}{br}Atomicswapwallet.io uses IPFS-network for all operational processes, allowing you to anonymously and securely exchange coins and tokens with other users. {br}{br} Currently Supported Swap Pairs: {br}Bitcoin ⇋ Ethereum, ERC20, Litecoin. {br}Ethereum ⇋ Bitcoin, Litecoin. {br}Litecoin ⇋ Bitcoin, Ethereum. {br}USDT ⇋ ERC20. {br}ERC20 Tokens ⇋ Bitcoin or USDT. {br}Swaps for BCH, EOS, TLOS are coming soon. {br}{br}",
+    "message": "Exchange your coins and tokens with 0 platform fees and no third-parties involved. You only pay Miners Fees (transaction fees). {br}{br}Atomicswapwallet.io uses IPFS-network for all operational processes, allowing you to anonymously and securely exchange coins and tokens with other users. {br}{br} Currently Supported Swap Pairs: {br}Bitcoin ⇋ Ethereum or ERC20 or Litecoin. {br}Ethereum ⇋ Bitcoin or Litecoin. {br}Litecoin ⇋ Bitcoin or Ethereum. {br}USDT ⇋ ERC20 Tokens. {br}ERC20 Tokens ⇋ Bitcoin or USDT. {br}Swaps for BCH, EOS, TLOS are coming soon. ",
     "files": [
       "shared/pages/PartialClosure/PartialClosure.js"
     ]
