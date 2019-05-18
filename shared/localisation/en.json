@@ -2807,7 +2807,7 @@
   },
   {
     "id": "Wallet137",
-    "message": "Deposit funds to addresses below",
+    "message": "100% Decentralized Browser-based Cryptocurrency Wallet Supporting P2P Coin Swaps.",
     "files": [
       "shared/pages/Wallet/Wallet.js"
     ]
@@ -3803,7 +3803,7 @@
   },
   {
     "id": "Wallet156",
-    "message": "Atomicswapwallet.io is a non-custodial (decentralized) browser-based cryptocurrency wallet supporting p2p swaps via Atomic Swaps. {br}{br}Atomicswapwallet.io does not store your data, keys or coins. It operates directly on your browser with no software or plugin installations and downloads required. {br}{br}All swap operations are executed via the IPFS network, allowing us to provide you with a truly decentralized and peer-to-peer coin and ERC20 token swapping experience. {br}{br} Currently Supported Swap Pairs: {br}Bitcoin can be Swapped for Ethereum, ERC20 Tokens, Litecoin. {br}Ethereum can be Swapped for Bitcoin, Litecoin. {br}Litecoin can be Swapped for Bitcoin, Ethereum. {br}USDT can be Swapped for only ERC20 Tokens. {br}ERC20 Tokens can be Swapped for Bitcoin or USDT. {br}Swaps for BCH, EOS, TLOS are coming soon. {br}{br}No third-parties, no proxy-tokens and no token wrappings required. It's your coins, your keys. As such, once lost, it will be lost forever. Be sure to save your private keys!",
+    "message": "Atomicswapwallet.io is a non-custodial (decentralized) browser-based cryptocurrency wallet supporting p2p swaps via Atomic Swaps. Atomicswapwallet.io does not store your data, keys or coins. It operates directly on your browser with no software or plugin installations and downloads required. All swap operations are executed via the IPFS network, allowing us to provide you with a truly decentralized and peer-to-peer coin and ERC20 token swapping experience. {br}{br} Currently Supported Swap Pairs: {br}Bitcoin ⇋ Ethereum or ERC20 Tokens or Litecoin. {br}Ethereum ⇋ Bitcoin or Litecoin. {br}Litecoin ⇋ Bitcoin or Ethereum. {br}USDT ⇋ ERC20 Tokens. {br}ERC20 Tokens ⇋ Bitcoin or USDT. {br}Swap Support for BCH, EOS, TLOS are coming soon. {br}{br}Zero platform fees, No third-parties, No proxy-tokens and No token wrappings involved. Please save your private keys at somewhere safe as once lost, your funds will be lost forever.",
     "files": [
       "shared/pages/Wallet/Wallet.js"
     ]
