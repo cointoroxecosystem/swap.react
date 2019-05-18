@@ -48,11 +48,6 @@ const messages = defineMessages({
     description: 'Menu item "My History"',
     defaultMessage: 'My History',
   },
-  aboutus: {	
-    id: 'menu.aboutus',	
-    description: 'Menu item "About Us"',	
-    defaultMessage: 'About Us',	
-  },
 })
 
 
@@ -104,11 +99,6 @@ export default class Header extends Component {
           title: props.intl.formatMessage(messages.history),
           link: links.history,
           icon: 'history',
-        },
-        {	
-          title: props.intl.formatMessage(messages.aboutus),	
-          link: links.aboutus,	
-          isMobile: false,	
         },
       ],
     }
