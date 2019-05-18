@@ -3803,14 +3803,14 @@
   },
   {
     "id": "Wallet156",
-    "message": "Welcome to Atomicswapwallet.io, a decentralized cross-chain wallet powered with Atomic Swap technology. {br}{br}Atomicswapwallet.io does not store your keys or coins. Our wallet operates directly via your browser, with no installations or downloads necessary. {br}All swap operations are executed via the IPFS network, allowing us to provide you with a truly decentralized and peer-to-peer coin exchange between Bitcoin - Ethereum, Bitcoin - Litecoin, Bitcoin - ERC20 Tokens (atomic swaps for BCH, EOS, TLOS, ETH as base currencies will be provided soon). {br}{br}No third-parties, no proxy-tokens and no token wrappings required. {br}{br} It's your coins, your keys. Be sure to save your private keys! Questions? Email us at support@atomicswapwallet.io.",
+    "message": "Atomicswapwallet.io is a non-custodial (decentralized) browser-based cryptocurrency wallet supporting p2p swaps via Atomic Swaps. {br}{br}Atomicswapwallet.io does not store your data, keys or coins. It operates directly on your browser with no software or plugin installations and downloads required. {br}{br}All swap operations are executed via the IPFS network, allowing us to provide you with a truly decentralized and peer-to-peer coin and ERC20 token swapping experience. {br}{br} Currently Supported Swap Pairs: {br}Bitcoin can be Swapped for Ethereum, ERC20 Tokens, Litecoin. {br}Ethereum can be Swapped for Bitcoin, Litecoin. {br}Litecoin can be Swapped for Bitcoin, Ethereum. {br}USDT can be Swapped for only ERC20 Tokens. {br}ERC20 Tokens can be Swapped for Bitcoin or USDT. {br}Swaps for BCH, EOS, TLOS are coming soon. {br}{br}No third-parties, no proxy-tokens and no token wrappings required. It's your coins, your keys. As such, once lost, it will be lost forever. Be sure to save your private keys!",
     "files": [
       "shared/pages/Wallet/Wallet.js"
     ]
   },
   {
     "id": "PartialClosure562",
-    "message": "Atomicswapwallet.io is a truly decentralized browser-based wallet supporting atomic swaps. Exchange Bitcoin, USD Tether, BCH, EOS, TLOS, ETH, and various ERC20 Tokens within seconds. No commissions on exchanges (only miners fee). {br}{br}Atomicswapwallet.io uses IPFS-network for all the operational processes. {br}Seamlessly store, send, receive, and exchange your coins or tokens with other peers in a decentralized manner. {br}{br}",
+    "message": "Exchange your coins and tokens with 0 platform fees and no third-parties involved. You only pay Miners Fees (transaction fees). {br}{br}Atomicswapwallet.io uses IPFS-network for all operational processes, allowing you to anonymously and securely exchange coins and tokens with other users. {br}{br} Currently Supported Swap Pairs: {br}Bitcoin can be Swapped for Ethereum, ERC20 Tokens, Litecoin. {br}Ethereum can be Swapped for Bitcoin, Litecoin. {br}Litecoin can be Swapped for Bitcoin, Ethereum. {br}USDT can be Swapped for only ERC20 Tokens. {br}ERC20 Tokens can be Swapped for Bitcoin or USDT. {br}Swaps for BCH, EOS, TLOS are coming soon. {br}{br}",
     "files": [
       "shared/pages/PartialClosure/PartialClosure.js"
     ]
