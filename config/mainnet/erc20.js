@@ -74,10 +74,10 @@ export default {
     decimals: 18,
     fullName: 'Golem',
   },
-    swap: {
-    address: '0x14a52cf6B4F68431bd5D9524E4fcD6F41ce4ADe9',
+    ext: {
+    address: '0xaf3b6cf6b25740af51cfebcaad5bae2ca12856f0',
     decimals: 18,
-    fullName: 'swap',
+    fullName: 'ExoToken',
   },
 
 }
