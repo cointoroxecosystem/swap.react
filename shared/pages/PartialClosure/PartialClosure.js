@@ -568,12 +568,6 @@ export default class PartialClosure extends Component {
     const currency = haveCurrency.toLowerCase()
 
     const pair = constants.tradeTicker
-      .filter(ticker => {
-        ticker = ticker.split('-')
-        return currency === ticker[0].toLowerCase()
-          ? ticker[0].toLowerCase() === currency
-          : ticker[1].toLowerCase() === currency
-      })
       .map(pair => {
         pair = pair.split('-')
         return {
@@ -585,7 +579,13 @@ export default class PartialClosure extends Component {
     const sendLinkFrom = pair.filter(item => item.from === haveCurrency.toUpperCase() || item.from === getCurrency.toUpperCase())
     const sendLinkTo = pair.filter(item => item.to === haveCurrency.toUpperCase() || item.to === getCurrency.toUpperCase())
 
-    const tradeTicker = `${sendLinkFrom[0].from.toLowerCase()}-${sendLinkTo[0].to.toLowerCase()}`
+    let tradeTicker
+
+    if (sendLinkFrom === sendLinkTo) {
+      tradeTicker = `${haveCurrency.toLowerCase()}-${getCurrency.toLowerCase()}`
+    } else {
+      tradeTicker = `${sendLinkFrom[0].from.toLowerCase()}-${sendLinkTo[0].to.toLowerCase()}`
+    }
 
     const hostname = window.location.origin
     const pathname = constants.tradeTicker.includes(tradeTicker.toUpperCase())
