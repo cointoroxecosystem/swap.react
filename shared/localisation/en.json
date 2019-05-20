@@ -106,7 +106,7 @@
   },
   {
     "id": "ADDoffer29",
-    "message": "Sign up",
+    "message": "Subscribe",
     "files": [
       "shared/components/Header/User/SignUpButton/SignUpButton.js"
     ]
@@ -3101,7 +3101,7 @@
   },
   {
     "id": "SignUpModal55",
-    "message": "Sign up",
+    "message": "Subscribe",
     "files": [
       "shared/components/modals/SignUpModal/SignUpModal.js"
     ]
@@ -3347,7 +3347,7 @@
   },
   {
     "id": "partial437",
-    "message": "Atomic Swap {full_name1} ({ticker_name1}) to {full_name2} ({ticker_name2}) p2p Exchange",
+    "message": "Exchange {full_name1} ({ticker_name1}) for {full_name2} ({ticker_name2}) Directly with Other Users via Atomic Swap",
     "files": [
       "shared/pages/PartialClosure/PartialClosure.js"
     ]
@@ -3771,7 +3771,7 @@
   },
   {
     "id": "Orders121",
-    "message": "Atomic Swap {buyCurrencyFullName} ({buyCurrency}) to {sellCurrencyFullName} ({sellCurrency}) p2p Exchange",
+    "message": "Exchange {buyCurrencyFullName} ({buyCurrency}) for {sellCurrencyFullName} ({sellCurrency}) Directly with Other Users via Atomic Swap",
     "files": [
       "shared/pages/Home/Orders/Orders.js"
     ]
