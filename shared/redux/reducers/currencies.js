@@ -56,12 +56,19 @@ const initialState = {
       fullTitle: 'bitcoin',
     },
     {
-      name: 'SWAP',
-      title: 'SWAP',
-      icon: 'swap',
-      value: 'swap',
-      fullTitle: 'swap',
+      name: 'OROX',
+      title: 'OROX',
+      icon: 'orox',
+      value: 'orox',
+      fullTitle: 'cointorox',
     },
+    {
+      name: 'USDT',
+      title: 'USDT',
+      icon: 'usdt',
+      value: 'usdt',
+      fullTitle: 'USD Tether',
+    },  
   ],
   addSelectedItems: [],
   addPartialItems: [],
@@ -113,6 +120,13 @@ if (config.isWidget) {
       value: config.erc20token,
       fullTitle: config.erc20[config.erc20token].fullName,
     },
+    {
+      name: 'USDT',
+      title: 'USDT',
+      icon: 'usdt',
+      value: 'usdt',
+      fullTitle: 'USD Tether',
+    },  
   ]
 
   initialState.addSelectedItems = [
