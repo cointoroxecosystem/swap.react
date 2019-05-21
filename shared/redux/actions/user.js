@@ -194,16 +194,6 @@ Private key: ${ltcData.privateKey}\r\n
 3. Go to settings > addresses > import\r\n
 4. paste private key and click "Ok"\r\n
 \r\n
-# BITCOINCASH\r\n
-\r\n
-Bitcoin Cash address: ${bchData.address}\r\n
-Private key: ${bchData.privateKey}\r\n
-\r\n
-1. Go to blockchain.info\r\n
-2. login\r\n
-3. Go to settings > addresses > import\r\n
-4. paste private key and click "Ok"\r\n`
-
 /*
 # XLM\r\n
 \r\n
