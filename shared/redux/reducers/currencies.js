@@ -4,25 +4,11 @@ import config from 'app-config'
 const initialState = {
   items: [
     {
-      name: 'EOS',
-      title: 'EOS',
-      icon: 'eos',
-      value: 'eos',
-      fullTitle: 'EOS',
-    },
-    {
       name: 'ETH',
       title: 'ETH',
       icon: 'eth',
       value: 'eth',
       fullTitle: 'ethereum',
-    },
-    {
-      name: 'LTC',
-      title: 'LTC',
-      icon: 'ltc',
-      value: 'ltc',
-      fullTitle: 'litecoin',
     },
     {
       name: 'BTC',
@@ -62,13 +48,6 @@ const initialState = {
       value: 'orox',
       fullTitle: 'cointorox',
     },
-    {
-      name: 'USDT',
-      title: 'USDT',
-      icon: 'usdt',
-      value: 'usdt',
-      fullTitle: 'USD Tether',
-    },  
   ],
   addSelectedItems: [],
   addPartialItems: [],
@@ -120,13 +99,6 @@ if (config.isWidget) {
       value: config.erc20token,
       fullTitle: config.erc20[config.erc20token].fullName,
     },
-    {
-      name: 'USDT',
-      title: 'USDT',
-      icon: 'usdt',
-      value: 'usdt',
-      fullTitle: 'USD Tether',
-    },  
   ]
 
   initialState.addSelectedItems = [
