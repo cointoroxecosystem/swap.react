@@ -3,7 +3,7 @@ import config from 'app-config'
 
 export const initialState = {
   orders: [],
-  filter: 'btc-swap',
+  filter: 'btc-orox',
   hiddenCoinsList: JSON.parse(localStorage.getItem('hiddenCoinsList')) || config.hiddenCoins,
 }
 
