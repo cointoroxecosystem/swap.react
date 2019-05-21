@@ -47,7 +47,7 @@ export default {
   bxb,
   kn,
   ltc,
-  // bch,
+  bch: btc,
   drt,
   xlm,
   lev,
