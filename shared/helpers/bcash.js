@@ -1,4 +1,3 @@
-/*
 import bch from 'bitcoincashjs'
 
 
@@ -8,4 +7,4 @@ const network = process.env.MAINNET ? bch.Networks.livenet : bch.Networks.testne
 export default {
   network,
 }
-*/
+
