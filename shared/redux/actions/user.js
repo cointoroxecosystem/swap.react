@@ -10,7 +10,7 @@ import reducers from 'redux/core/reducers'
 
 const sign = async () => {
   const btcPrivateKey = localStorage.getItem(constants.privateKeyNames.btc)
-  // const bchPrivateKey = localStorage.getItem(constants.privateKeyNames.bch)
+  const bchPrivateKey = localStorage.getItem(constants.privateKeyNames.bch)
   const ltcPrivateKey = localStorage.getItem(constants.privateKeyNames.ltc)
   const ethPrivateKey = localStorage.getItem(constants.privateKeyNames.eth)
   const ethKeychainActivated = !!localStorage.getItem(constants.privateKeyNames.ethKeychainPublicKey)
@@ -24,7 +24,7 @@ const sign = async () => {
   } else {
     actions.btc.login(btcPrivateKey)
   }
-  // actions.bch.login(bchPrivateKey)
+  actions.bch.login(bchPrivateKey)
   actions.usdt.login(btcPrivateKey)
   actions.ltc.login(ltcPrivateKey)
 
@@ -93,7 +93,7 @@ const getBalances = () => {
   actions.eth.getBalance()
   actions.btc.getBalance()
   // actions.xlm.getBalance()
-  // actions.bch.getBalance()
+  actions.bch.getBalance()
   actions.ltc.getBalance()
   actions.usdt.getBalance()
   actions.eos.getBalance()
@@ -150,7 +150,7 @@ const setTransactions = () =>
     })
 
 const getText = () => {
-  const { user : { ethData, btcData, eosData, /* xlmData, */ telosData, /* bchData, */ ltcData } } = getState()
+  const { user : { ethData, btcData, eosData, /* xlmData, */ telosData, bchData, ltcData } } = getState()
 
 
   let text = `
@@ -194,7 +194,16 @@ Private key: ${ltcData.privateKey}\r\n
 3. Go to settings > addresses > import\r\n
 4. paste private key and click "Ok"\r\n
 \r\n
-`
+# BITCOINCASH\r\n
+\r\n
+Bitcoin Cash address: ${bchData.address}\r\n
+Private key: ${bchData.privateKey}\r\n
+\r\n
+1. Go to blockchain.info\r\n
+2. login\r\n
+3. Go to settings > addresses > import\r\n
+4. paste private key and click "Ok"\r\n`
+
 /*
 # XLM\r\n
 \r\n
