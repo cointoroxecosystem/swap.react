@@ -1,4 +1,3 @@
-/*
 import bch from 'bitcoincashjs'
 import { getState } from 'redux/core'
 import reducers from 'redux/core/reducers'
@@ -60,4 +59,4 @@ export default {
   broadcastTx,
   fetchBalance,
 }
-*/
+
