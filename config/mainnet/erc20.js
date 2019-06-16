@@ -84,6 +84,11 @@ tusd: {
     decimals: 18,
     fullName: 'TrueUSD',
   },  
+udoo: {
+    address: '0x0df721639ca2f7ff0e1f618b918a65ffb199ac4e',
+    decimals: 18,
+    fullName: 'Howdoo',
+  },
 usdc: {
     address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
     decimals: 6,
