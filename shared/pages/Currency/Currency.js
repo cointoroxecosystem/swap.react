@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 
 import { connect } from 'redaction'
-import { constants } from 'helpers'
+import { constants, links } from 'helpers'
 import { isMobile } from 'react-device-detect'
 import { withRouter } from 'react-router'
 import actions from 'redux/actions'
@@ -124,7 +124,8 @@ export default class Currency extends Component {
   render() {
     const { match: { params: { currency } }, items, intl: { locale, formatMessage } } = this.props
     const { isBalanceEmpty, balance } = this.state
-    const currencyFullName = items.find(item => item.currency === currency.toUpperCase()).fullName
+    const myCurrency = items.find(item => item.currency === currency.toUpperCase())
+    const currencyFullName = myCurrency ? myCurrency.fullName : 'Chosen currency'
 
     const SeoValues = {
       fullName: currencyFullName,
@@ -193,7 +194,7 @@ export default class Currency extends Component {
             <Row key={index} {...row} />
           )}
         />
-        <CloseIcon styleName="closeButton" onClick={() => this.props.history.push(localisedUrl(locale, '/'))} data-testid="CloseIcon" />
+        <CloseIcon styleName="closeButton" onClick={() => this.props.history.push(localisedUrl(locale, links.home))} data-testid="CloseIcon" />
       </section>
     )
   }

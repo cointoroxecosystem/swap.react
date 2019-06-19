@@ -79,6 +79,35 @@ export default class SwapProgress extends Component {
     }
   }
 
+  onPushGoToWallet = () => {
+    const { buyCurrency } = this.state
+
+    switch (buyCurrency) {
+      case 'BTC':
+        this.history.push(localisedUrl(this.locale, '/Bitcoin-wallet'))
+        break
+      case 'ETH':
+        this.history.push(localisedUrl(this.locale, '/Ethereum-wallet'))
+        break
+      default:
+        this.history.push(localisedUrl(this.locale, `/${buyCurrency.toLowerCase()}-wallet`))
+    }
+  }
+
+  onPushGoToTxPage = () => {
+    const {
+      flow,
+      swap,
+    } = this.state
+
+    if (flow.ethSwapWithdrawTransactionHash && swap.sellCurrency === 'BTC') {
+      window.open(`${config.link.etherscan}/tx/${flow.ethSwapWithdrawTransactionHash}`, '_blank')
+    }
+    if (flow.btcSwapWithdrawTransactionHash) {
+      window.open(`${config.link.bitpay}/tx/${flow.btcSwapWithdrawTransactionHash}`, '_blank')
+    }
+  }
+
   handleBarProgress = () => {
     const { swap: { sellCurrency, flow: { stepNumbers, state: { step } } } } = this.state
     const first = stepNumbers.sign
@@ -154,35 +183,6 @@ export default class SwapProgress extends Component {
     this.swap.flow.submitSecret(secret)
   }
 
-  onPushGoToWallet = () => {
-    const { buyCurrency } = this.state
-
-    switch (buyCurrency) {
-      case 'BTC':
-        this.history.push(localisedUrl(this.locale, '/Bitcoin-wallet'))
-        break
-      case 'ETH':
-        this.history.push(localisedUrl(this.locale, '/Ethereum-wallet'))
-        break
-      default:
-        this.history.push(localisedUrl(this.locale, `/${buyCurrency.toLowerCase()}-wallet`))
-    }
-  }
-
-  onPushGoToTxPage = () => {
-    const {
-      flow,
-      swap,
-    } = this.state
-
-    if (flow.ethSwapWithdrawTransactionHash && swap.sellCurrency === 'BTC') {
-      window.open(`${config.link.etherscan}/tx/${flow.ethSwapWithdrawTransactionHash}`, '_blank')
-    }
-    if (flow.btcSwapWithdrawTransactionHash) {
-      window.open(`${config.link.bitpay}/tx/${flow.btcSwapWithdrawTransactionHash}`, '_blank')
-    }
-  }
-
   confirmBTCScriptChecked = () => {
     this.swap.flow.verifyBtcScript()
   }
@@ -207,7 +207,6 @@ export default class SwapProgress extends Component {
 
     const progress = Math.floor(90 * stepValue)
     const finishIcon = <img src={finishSvg} alt="finishIcon" />
-
     const showWalletButton = (!this.swap.destinationBuyAddress) || (this.swap.destinationBuyAddress === this.wallets[buyCurrency.toUpperCase()])
 
     const swapTexts = (
@@ -362,7 +361,7 @@ export default class SwapProgress extends Component {
                 </a>
               </strong>
             )}
-            {flow.btcSwapWithdrawTransactionHash && (
+            {flow.btcSwapWithdrawTransactionHash && swap.buyCurrency === 'BTC' && (
               <strong styleName="transaction">
                 <a
                   href={`${config.link.bitpay}/tx/${flow.btcSwapWithdrawTransactionHash}`}

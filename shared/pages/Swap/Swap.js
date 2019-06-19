@@ -31,13 +31,13 @@ const isWidgetBuild = config && config.isWidget
 
 @injectIntl
 @connect(({
-  user: { ethData, btcData, /* bchData, */ tokensData, eosData, telosData, nimData, usdtData, ltcData },
+  user: { ethData, btcData, bchData, tokensData, eosData, telosData, nimData, usdtData, ltcData },
   ipfs: { peer },
   rememberedOrders,
 }) => ({
-  items: [ ethData, btcData, eosData, telosData, /* bchData, */ ltcData, usdtData /* nimData */ ],
+  items: [ ethData, btcData, eosData, telosData, bchData, ltcData, usdtData /* nimData */ ],
   tokenItems: [ ...Object.keys(tokensData).map(k => (tokensData[k])) ],
-  currenciesData: [ ethData, btcData, eosData, telosData, /* bchData, */ ltcData, usdtData /* nimData */ ],
+  currenciesData: [ ethData, btcData, eosData, telosData, bchData, ltcData, usdtData /* nimData */ ],
   tokensData: [ ...Object.keys(tokensData).map(k => (tokensData[k])) ],
   errors: 'api.errors',
   checked: 'api.checked',
@@ -75,14 +75,6 @@ export default class SwapComponent extends PureComponent {
     const { items, tokenItems, currenciesData, tokensData, intl: { locale }, deletedOrders } = this.props
     let { match : { params : { orderId } }, history, location: { pathname } } = this.props
 
-    this.wallets = {}
-    currenciesData.forEach(item => {
-      this.wallets[item.currency] = item.address
-    })
-    tokensData.forEach(item => {
-      this.wallets[item.currency] = item.address
-    })
-
     if (!!window.performance && window.performance.navigation.type === 2) {
       window.location.reload()
     }
@@ -91,6 +83,14 @@ export default class SwapComponent extends PureComponent {
       history.push(localisedUrl(links.exchange))
       return
     }
+
+    this.wallets = {}
+    currenciesData.forEach(item => {
+      this.wallets[item.currency] = item.address
+    })
+    tokensData.forEach(item => {
+      this.wallets[item.currency] = item.address
+    })
 
     try {
       const swap = new Swap(orderId, SwapApp.shared())
@@ -183,6 +183,7 @@ export default class SwapComponent extends PureComponent {
         this.catchWithdrawError()
         this.requestingWithdrawFee()
         this.isBalanceEnough()
+        this.checkFailSwap()
       }, 5000)
     }
   }
@@ -334,6 +335,29 @@ export default class SwapComponent extends PureComponent {
     })
   }
 
+  checkFailSwap = () => {
+    const {
+      swap: {
+        flow: {
+          state: {
+            isFailedTransaction,
+          },
+        },
+      },
+      continueSwap,
+    } = this.state
+
+    if (isFailedTransaction) {
+      this.setState(() => ({
+        continueSwap: false,
+      }))
+    } else {
+      this.setState(() => ({
+        continueSwap: true,
+      }))
+    }
+  }
+
   checkEnoughFee = () => {
     const {
       swap: {
@@ -341,7 +365,6 @@ export default class SwapComponent extends PureComponent {
         flow: {
           state: {
             canCreateEthTransaction,
-            requireWithdrawFee,
           },
         },
       },
@@ -439,7 +462,6 @@ export default class SwapComponent extends PureComponent {
               depositWindow={depositWindow}
               disabledTimer={isAmountMore === 'enable'}
               history={history}
-              locale={locale}
               swap={swap}
               ethAddress={ethAddress}
               currencyData={currencyData}
@@ -450,6 +472,7 @@ export default class SwapComponent extends PureComponent {
               requestToFaucetSended={requestToFaucetSended}
               waitWithdrawOther={waitWithdrawOther}
               onClickCancelSwap={this.cancelSwap}
+              locale={locale}
               wallets={this.wallets}
             >
               <Share flow={swap.flow} />

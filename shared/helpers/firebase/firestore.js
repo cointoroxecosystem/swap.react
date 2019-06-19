@@ -77,7 +77,7 @@ const addUser = (userData) =>
     try {
 
       const userID = await fbHelper.getUserID()
-      const date = moment().format('HH:mm:ss DD/MM/YYYY ZZ')
+      const date = moment().format('HH:mm:ss DD/MM/YYYY')
       const unixDate = moment().unix()
       const gaID = actions.analytics.getClientId() || 'None'
 
@@ -110,7 +110,7 @@ const submitCustomUserData = (collection, userData) => {
     try {
 
       const userID = await fbHelper.getUserID()
-      const date = moment().format('HH:mm:ss DD/MM/YYYY ZZ')
+      const date = moment().format('HH:mm:ss DD/MM/YYYY')
       const unixDate = moment().unix()
       const gaID = actions.analytics.getClientId() || 'None'
 
@@ -148,7 +148,8 @@ const updateUserData = (userData) =>
       }
 
       if (userID) {
-        await updateData('users', userID, data)
+        const res = await updateData('users', userID, data)
+        resolve(res)
       }
 
     } catch (error) {
@@ -167,20 +168,19 @@ const signUpWithPush = () =>
 
     console.log('firebase messagingToken: ', messagingToken)
 
-    const sendResult = updateUserData({
+    const sendResult = await updateUserData({
       messagingToken,
     })
 
     if (sendResult) {
-      actions.firebase.setSigned()
       actions.analytics.signUpEvent({ action: 'signed', type: 'push' })
     }
-    resolve(sendResult)
+    resolve(true)
   })
 
 const signUpWithEmail = (subscriptionData) =>
   new Promise(async resolve => {
-    const sendResult = updateUserData(subscriptionData)
+    const sendResult = await updateUserData(subscriptionData)
 
     if (sendResult) {
       actions.firebase.setSigned()

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -25,17 +26,29 @@ import WidthContainer from 'components/layout/WidthContainer/WidthContainer'
 import TourPartial from './TourPartial/TourPartial'
 
 import Logo from 'components/Logo/Logo'
+import Loader from 'components/loaders/Loader/Loader'
 import { relocalisedUrl } from 'helpers/locale'
-import { localisedUrl } from '../../helpers/locale'
+import { localisedUrl, unlocalisedUrl } from '../../helpers/locale'
 import UserTooltip from 'components/Header/User/UserTooltip/UserTooltip'
+
 
 let lastScrollTop = 0
 
 const messages = defineMessages({
+  products: {
+    id: 'menu.products',
+    description: 'Menu item "Wallet"',
+    defaultMessage: 'Our products',
+  },
   wallet: {
     id: 'menu.wallet',
     description: 'Menu item "Wallet"',
     defaultMessage: 'Wallet',
+  },
+  createWallet: {
+    id: 'menu.CreateWallet',
+    description: 'Menu item "Wallet"',
+    defaultMessage: 'Create wallet',
   },
   exchange: {
     id: 'menu.exchange',
@@ -44,16 +57,20 @@ const messages = defineMessages({
   },
   history: {
     id: 'menu.history',
-    description: 'Menu item "My History"',
-    defaultMessage: 'My History',
+    description: 'Menu item "History"',
+    defaultMessage: 'My history',
   },
-  aboutus: {
-    id: 'menu.aboutus',
-    description: 'Menu item "About Us"',
-    defaultMessage: 'About Us',
+  invest: {
+    id: 'menu.invest',
+    description: 'Menu item "My History"',
+    defaultMessage: 'How to invest?',
+  },
+  investMobile: {
+    id: 'menu.invest',
+    description: 'Menu item "My History"',
+    defaultMessage: 'Invest',
   },
 })
-
 
 @injectIntl
 @withRouter
@@ -71,7 +88,7 @@ export default class Header extends Component {
   }
 
   static getDerivedStateFromProps({ history: { location: { pathname } } }) {
-    if  (pathname === '/ru' || pathname === '/') {
+    if  (pathname === '/ru' || pathname === '/' || pathname === links.currencyWallet) {
       return { path: true }
     }
     return { path: false }
@@ -79,6 +96,20 @@ export default class Header extends Component {
 
   constructor(props) {
     super(props)
+
+    if (localStorage.getItem(constants.localStorage.lastCheckBalance) || localStorage.getItem(constants.localStorage.wasCautionPassed)) {
+      localStorage.setItem(constants.localStorage.didWalletCreated, true)
+    }
+
+    const dinamicPath = props.location.pathname.includes(links.exchange)
+      ? `${unlocalisedUrl(props.intl.locale, props.location.pathname)}`
+      : `${links.home}`
+
+    const didWalletCreated = localStorage.getItem(constants.localStorage.didWalletCreated)
+
+    const isWalletPage = props.location.pathname === links.currencyWallet
+      || props.location.pathname === `/ru${links.currencyWallet}`
+
     this.state = {
       optionsForOenSignUpModal: {},
       isPartialTourOpen: false,
@@ -86,36 +117,38 @@ export default class Header extends Component {
       isTourOpen: false,
       isShowingMore: false,
       sticky: false,
-      menuItems: [
+      isWallet: false,
+      menuItemsFill: [
         {
-          title: props.intl.formatMessage(messages.wallet),
-          link: links.home,
+          title: props.intl.formatMessage(messages.products),
+          link: 'openMySesamPlease',
           exact: true,
-          icon: 'wallet',
+          haveSubmenu: true,
+          icon: 'products',
+          currentPageFlag: true,
         },
         {
-          title: props.intl.formatMessage(messages.exchange),
-          link: links.exchange,
-          icon: 'exchange-alt',
-          tour: 'reactour__exchange',
+          title: props.intl.formatMessage(messages.invest),
+          link: 'exchange/btc-to-swap',
+          icon: 'invest',
+          haveSubmenu: false,
         },
         {
           title: props.intl.formatMessage(messages.history),
           link: links.history,
           icon: 'history',
-        },
-        {
-          title: props.intl.formatMessage(messages.aboutus),
-          link: links.aboutus,
-          isMobile: false,
+          haveSubmenu: false,
         },
       ],
+      menuItems: this.getMenuItems(props, didWalletCreated, dinamicPath),
+      menuItemsMobile: this.getMenuItemsMobile(props, didWalletCreated, dinamicPath),
+      createdWalletLoader: isWalletPage && !didWalletCreated,
     }
     this.lastScrollTop = 0
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
+    // window.addEventListener('scroll', this.handleScroll)
 
     const checker = setInterval(() => {
       switch (true) {
@@ -129,10 +162,85 @@ export default class Header extends Component {
     }, 3000)
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-    this.startTourAndSignInModal()
+  componentDidUpdate() {
+    this.tapCreateWalletButton()
+  }
 
+  componentWillUnmount() {
+    // window.removeEventListener('scroll', this.handleScroll)
+    this.startTourAndSignInModal()
+    clearTimeout(this.timeoutLoader)
+  }
+
+  getMenuItems = (props, didWalletCreated, dinamicPath) => ([
+    {
+      title: props.intl.formatMessage(didWalletCreated ? messages.wallet : messages.createWallet),
+      link: links.currencyWallet,
+      exact: true,
+      haveSubmenu: true,
+      icon: 'products',
+      currentPageFlag: true,
+    },
+    {
+      title: props.intl.formatMessage(messages.exchange),
+      link: dinamicPath,
+      exact: true,
+      haveSubmenu: true,
+      icon: 'products',
+      currentPageFlag: true,
+    },
+    {
+      title: props.intl.formatMessage(messages.history),
+      link: links.history,
+      icon: 'history',
+      haveSubmenu: false,
+      displayNone: !didWalletCreated,
+    },
+  ])
+
+  getMenuItemsMobile = (props, didWalletCreated, dinamicPath) => ([
+    {
+      title: props.intl.formatMessage(didWalletCreated ? messages.wallet : messages.createWallet),
+      link: links.currencyWallet,
+      exact: true,
+      haveSubmenu: true,
+      icon: 'products',
+    },
+    {
+      title: props.intl.formatMessage(messages.exchange),
+      link: dinamicPath,
+      exact: true,
+      haveSubmenu: true,
+      icon: 'products',
+    },
+    {
+      title: props.intl.formatMessage(messages.history),
+      link: links.history,
+      icon: 'history',
+      haveSubmenu: false,
+      displayNone: !didWalletCreated,
+    },
+  ])
+
+  tapCreateWalletButton = () => {
+    const { location, intl } = this.props
+    const dinamicPath = location.pathname.includes(links.exchange)
+      ? `${unlocalisedUrl(intl.locale, location.pathname)}`
+      : `${links.home}`
+    let didWalletCreated = localStorage.getItem(constants.localStorage.didWalletCreated)
+    const isWalletPage = location.pathname === links.currencyWallet
+      || location.pathname === `/ru${links.currencyWallet}`
+
+    if (isWalletPage && !didWalletCreated) {
+      localStorage.setItem(constants.localStorage.didWalletCreated, true)
+      didWalletCreated = true
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({
+        menuItems: this.getMenuItems(this.props, didWalletCreated, dinamicPath),
+        menuItemsMobile: this.getMenuItemsMobile(this.props, didWalletCreated, dinamicPath),
+        createdWalletLoader: true,
+      })
+    }
   }
 
   startTourAndSignInModal = () => {
@@ -151,14 +259,17 @@ export default class Header extends Component {
       return
     }
 
-    const isStartPage = currentUrl.pathname === '/' || currentUrl.pathname === '/ru'
-    const isPartialPage = currentUrl.pathname.includes('/exchange/')
+    const isWalletPage = currentUrl.pathname === links.currencyWallet
+      || currentUrl.pathname === `/ru${links.currencyWallet}`
+    const isPartialPage = currentUrl.pathname.includes(links.exchange)
+      || currentUrl.pathname === '/'
+      || currentUrl.pathname === '/ru'
     const didOpenSignUpModal = localStorage.getItem(constants.localStorage.didOpenSignUpModal)
     const wasOnWallet = localStorage.getItem(constants.localStorage.wasOnWallet)
     const wasOnExchange = localStorage.getItem(constants.localStorage.wasOnExchange)
 
     switch (true) {
-      case isStartPage && !wasOnWallet:
+      case isWalletPage && !wasOnWallet:
         this.startTourInNeed(didOpenSignUpModal, this.openWalletTour)
         localStorage.setItem(constants.localStorage.wasOnWallet, true)
         break
@@ -169,7 +280,7 @@ export default class Header extends Component {
       default: return
     }
 
-    if (!didOpenSignUpModal) {
+    if (!didOpenSignUpModal && !isPartialPage) {
       this.openSignUpModal(this.state.optionsForOenSignUpModal)
     }
   }
@@ -209,7 +320,9 @@ export default class Header extends Component {
 
   handleScroll = () =>  {
     if (this.props.history.location.pathname === '/') {
-      this.setState(() => ({ sticky: false }))
+      this.setState(() => ({
+        sticky: false,
+      }))
       return
     }
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop
@@ -248,11 +361,20 @@ export default class Header extends Component {
   }
 
   render() {
+    const { sticky, menuItemsFill, isTourOpen, isShowingMore, path, isPartialTourOpen, isWallet, menuItems, menuItemsMobile, createdWalletLoader } = this.state
+    const { intl: { locale, formatMessage }, history, pathname, feeds, peer, isSigned, isInputActive } = this.props
 
-    const { sticky, menuItems, isTourOpen, isShowingMore, path, isPartialTourOpen } = this.state
-    const { intl: { locale }, history, pathname, feeds, peer, isSigned, isInputActive } = this.props
+    if (createdWalletLoader) {
+      this.timeoutLoader = setTimeout(() => {
+        this.setState({ createdWalletLoader: false })
+      }, 4000)
+    }
 
     const accentColor = '#510ed8'
+
+    const isExchange = history.location.pathname.includes('/exchange')
+      || history.location.pathname === '/'
+      || history.location.pathname === '/ru'
 
     if (config && config.isWidget) {
       return (
@@ -265,27 +387,41 @@ export default class Header extends Component {
     if (isMobile) {
       return (
         <div styleName={isInputActive ? 'header-mobile header-mobile__hidden' : 'header-mobile'}>
+          {
+            createdWalletLoader && (
+              <div styleName="loaderCreateWallet">
+                <Loader showMyOwnTip={formatMessage({ id: 'createWalletLoaderTip', defaultMessage: 'Creating wallet... Please wait.' })} />
+              </div>
+            )
+          }
           <UserTooltip
             feeds={feeds}
             peer={peer}
             acceptRequest={this.acceptRequest}
             declineRequest={this.declineRequest}
           />
-          <NavMobile menu={menuItems} />
+          <NavMobile menu={menuItemsMobile} />
           {!isSigned && (<SignUpButton mobile />)}
         </div>
       )
     }
 
     return (
-      <div styleName={sticky ? 'header header-fixed' : 'header'}>
+      <div styleName={sticky ? 'header header-fixed' : isExchange ? 'header header-promo' : 'header'}>
+        {
+          createdWalletLoader && (
+            <div styleName="loaderCreateWallet">
+              <Loader showMyOwnTip={formatMessage({ id: 'createWalletLoaderTip', defaultMessage: 'Creating wallet... Please wait.' })} />
+            </div>
+          )
+        }
         <WidthContainer styleName="container">
-          <LogoTooltip withLink />
+          <LogoTooltip withLink isExchange={isExchange} />
           <Nav menu={menuItems} />
           <Logo withLink mobile />
           <TourPartial isTourOpen={this.state.isPartialTourOpen} />
           <User
-            openTour={this.openWalletTour}
+            openTour={isExchange ? this.openExchangeTour : this.openWalletTour}
             path={path}
             acceptRequest={this.acceptRequest}
             declineRequest={this.declineRequest}

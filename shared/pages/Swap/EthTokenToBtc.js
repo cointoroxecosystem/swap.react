@@ -15,6 +15,7 @@ import Link from 'sw-valuelink'
 import SwapProgress from './SwapProgress/SwapProgress'
 import SwapList from './SwapList/SwapList'
 import FeeControler from './FeeControler/FeeControler'
+import FailControler from './FailControler/FailControler'
 import DepositWindow from './DepositWindow/DepositWindow'
 import paddingForSwapList from 'shared/helpers/paddingForSwapList.js'
 
@@ -158,16 +159,30 @@ export default class EthTokenToBtc extends Component {
       continueSwap,
       enoughBalance,
       history,
-      locale,
       ethAddress,
       requestToFaucetSended,
       onClickCancelSwap,
+      locale,
+      wallets,
     }  = this.props
 
-    const { currencyAddress, flow, enabledButton, isShowingBitcoinScript, isAddressCopied, currencyData, tokenItems, signed, paddingContainerValue, swap } = this.state
+    const {
+      currencyAddress,
+      flow,
+      enabledButton,
+      isShowingBitcoinScript,
+      isAddressCopied,
+      currencyData,
+      tokenItems,
+      signed,
+      paddingContainerValue,
+      swap
+    } = this.state
 
-    // eslint-disable-next-line
-    const SwapProgressView = <SwapProgress flow={flow} name="EthTokensToBtc" swap={swap} tokenItems={tokenItems} history={history} locale={locale} signed={signed} wallets={this.props.wallets} />
+    const { canCreateEthTransaction, isFailedTransaction } = flow
+
+    /* eslint-disable-line */ // Line exceeds the maximum line length of 180  max-len
+    const SwapProgressView = <SwapProgress flow={flow} name="EthTokensToBtc" swap={swap} tokenItems={tokenItems} history={history} locale={locale} wallets={wallets} signed={signed} />
 
     return (
       <div>
@@ -195,7 +210,20 @@ export default class EthTokenToBtc extends Component {
             : (
               <Fragment>
                 {!continueSwap
-                  ? ((!requestToFaucetSended) ? <FeeControler ethAddress={ethAddress} /> : SwapProgressView)
+                  ? (
+                    <Fragment>
+                      {
+                        !canCreateEthTransaction && (
+                          <FeeControler ethAddress={ethAddress} />
+                        )
+                      }
+                      {
+                        isFailedTransaction && (
+                          <FailControler ethAddress={ethAddress} />
+                        )
+                      }
+                    </Fragment>
+                  )
                   : SwapProgressView
                 }
               </Fragment>
