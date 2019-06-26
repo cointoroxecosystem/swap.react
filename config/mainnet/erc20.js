@@ -24,6 +24,11 @@ dent: {
     decimals: 8,
     fullName: 'Dent',
   },  
+elet: {
+    address: '0x6c37bf4f042712c978a73e3fd56d1f5738dd7c43',
+    decimals: 18,
+    fullName: 'Elementeum',
+  },      
 ext: {
     address: '0xaf3b6cf6b25740af51cfebcaad5bae2ca12856f0',
     decimals: 18,
@@ -84,6 +89,11 @@ tusd: {
     decimals: 18,
     fullName: 'TrueUSD',
   },  
+udoo: {
+    address: '0x0df721639ca2f7ff0e1f618b918a65ffb199ac4e',
+    decimals: 18,
+    fullName: 'uDoo',
+  },
 usdc: {
     address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
     decimals: 6,
