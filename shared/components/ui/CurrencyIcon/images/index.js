@@ -40,6 +40,8 @@ import ext from './ext.png'
 import bnt from './bnt.png'
 import dent from './dent.png'
 import snt from './snt.png'
+import udoo from './udoo.png'
+import elet from './elet.png'
 
 export default {
   btc,
@@ -84,4 +86,6 @@ export default {
   bnt,
   dent,
   snt,
+  udoo,
+  elet,
 }
