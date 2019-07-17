@@ -1,7 +1,7 @@
 ## Atomicswapwallet.io
 [![Build Status](https://travis-ci.org/swaponline/swap.react.svg?branch=master)](https://travis-ci.org/swaponline/swap.react)
 
-Atomic swap cryptocurrency protocol. Live version here: https://Atomicswapwallet.io. Atomic swap library at http://github.com/swaponline/swap.core.
+Atomic swap cryptocurrency protocol. Live version here: https://Atomicswapwallet.io. Atomic swap library at https://github.com/hype-ecosystem/atomicswapwallet.io/.
 
 <img src="https://user-images.githubusercontent.com/2914674/55753139-48666900-5a52-11e9-8814-4b38b0372529.gif" data-canonical-src="https://wiki.swap.online/widg_2.gif" width="400"  />
 
@@ -11,7 +11,7 @@ Atomic swap cryptocurrency protocol. Live version here: https://Atomicswapwallet
 
 1) Clone repository with submodules (swap.core)
 ```
-git clone --recurse-submodules https://github.com/cointoroxecosystem/swap.react.git
+git clone --recurse-submodules https://github.com/hype-ecosystem/atomicswapwallet.io.git
 ```
 
 2) Do `npm i` <br />
