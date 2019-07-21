@@ -1,8 +1,8 @@
 export default {
-orox: {
-    address: '0x1c5b760f133220855340003b43cc9113ec494823',
+hype: {
+    address: '0x2630997aab62fa1030a8b975e1aa2dc573b18a13',
     decimals: 18,
-    fullName: 'Cointorox',
+    fullName: 'HYPE Token',
   },
 bat: {
     address: '0x0d8775f648430679a709e98d2b0cb6250d2887ef',
@@ -69,6 +69,11 @@ omg: {
     decimals: 18,
     fullName: 'OmiseGo',
   },
+orox: {
+    address: '0x1c5b760f133220855340003b43cc9113ec494823',
+    decimals: 18,
+    fullName: 'Cointorox',
+  },    
 rep: {
     address: '0x1985365e9f78359a9B6AD760e32412f4a445E862',
     decimals: 18,
