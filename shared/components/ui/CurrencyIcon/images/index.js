@@ -42,6 +42,7 @@ import dent from './dent.png'
 import snt from './snt.png'
 import udoo from './udoo.png'
 import elet from './elet.png'
+import hype from './hype.png'
 
 export default {
   btc,
@@ -88,4 +89,5 @@ export default {
   snt,
   udoo,
   elet,
+  hype,
 }
