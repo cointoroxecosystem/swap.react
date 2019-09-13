@@ -34,6 +34,11 @@ ext: {
     decimals: 18,
     fullName: 'ExoToken',
   },  
+free: {
+    address: '0x2f141ce366a2462f02cea3d12cf93e4dca49e4fd',
+    decimals: 18,
+    fullName: 'Free Coin',
+  },      
 gnt: {
     address: '0xa74476443119A942dE498590Fe1f2454d7D4aC0d',
     decimals: 18,
