@@ -47,7 +47,7 @@ export default class Home extends Component {
     const { buyCurrency, sellCurrency } = initialData || {}
 
     this.state = {
-      buyCurrency: buy || buyCurrency || 'orox',
+      buyCurrency: buy || buyCurrency || 'hype',
       sellCurrency: sell || sellCurrency || 'btc',
       invalidPair: false,
       isShow: false,
@@ -119,10 +119,10 @@ export default class Home extends Component {
     } else if (constants.tradeTicker.includes(`${buy}-${sell}`)) {
       this.setFilter(`${buy}-${sell}`)
     } else {
-      this.setFilter('orox-btc')
+      this.setFilter('hype-btc')
       this.setState(() => ({
         sellCurrency: 'btc',
-        buyCurrency: 'orox',
+        buyCurrency: 'hype',
         invalidPair: true,
       }))
     }
