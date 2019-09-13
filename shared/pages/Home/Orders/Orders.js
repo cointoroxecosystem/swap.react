@@ -175,7 +175,7 @@ export default class Orders extends Component {
         </div>
         { invalidPair &&
           <p>
-            <FormattedMessage id="Orders141" defaultMessage="No such ticker. Redirecting to OROX-BTC exchange..." />
+            <FormattedMessage id="Orders141" defaultMessage="No such ticker. Redirecting to HYPE-BTC exchange..." />
           </p>
         }
         <div styleName={buttonsRowStyleName}>
