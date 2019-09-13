@@ -43,6 +43,7 @@ import snt from './snt.png'
 import udoo from './udoo.png'
 import elet from './elet.png'
 import hype from './hype.png'
+import free from './free.png'
 
 export default {
   btc,
@@ -90,4 +91,5 @@ export default {
   udoo,
   elet,
   hype,
+  free,
 }
