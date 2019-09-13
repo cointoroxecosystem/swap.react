@@ -262,7 +262,7 @@ export default class Wallet extends Component {
               defaultMessage="
                 🎁 🎁 🎁 Thank you for using Atomicswapwallet.io!
                 Tell us about your experience with our service
-                and we will gift you $5 in OROX 🎁 🎁 🎁"
+                and we will gift you $5 in HYPE Token 🎁 🎁 🎁"
             />
            
           </div>
