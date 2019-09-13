@@ -4040,7 +4040,7 @@
   },
   {
     "id": "ReferralLinks1",
-    "message": "Share or send link on this page: every user who visits via your referral link gets some OROX.",
+    "message": "Share or send link on this page: every user who visits via your referral link gets to know more about us!",
     "files": [
       "shared/components/Footer/Referral/Referral.js"
     ]
@@ -4238,7 +4238,7 @@
   },
   {
     "id": "WalletPromoText",
-    "message": "🎁 🎁 🎁 Thank you for using Atomicswapwallet.io!\n                Tell us about your experience with our service\n                and we will gift you $10 in OROX 🎁 🎁 🎁",
+    "message": "🎁 🎁 🎁 Thank you for using Atomicswapwallet.io!\n                Tell us about your experience with our service\n                and help us grow! 🎁 🎁 🎁",
     "files": [
       "shared/pages/Wallet/Wallet.js"
     ]
