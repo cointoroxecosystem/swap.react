@@ -44,6 +44,8 @@ import udoo from './udoo.png'
 import elet from './elet.png'
 import hype from './hype.png'
 import free from './free.png'
+import innbcl from './innbcl.png'
+import kwh from './kwh.png'
 
 export default {
   btc,
@@ -92,4 +94,6 @@ export default {
   elet,
   hype,
   free,
+  innbcl,
+  kwh,
 }
