@@ -54,6 +54,16 @@ hot: {
     decimals: 18,
     fullName: 'Holo',
   },
+innbcl: {
+    address: '0x8cc3e2bdc17682c622eb789eda23fbd6988c84da',
+    decimals: 10,
+    fullName: 'Innovative Bioresearch Classic',
+  },
+kwh: {
+    address: '0xB8DdC930c2bAB6c71610A2BE639036E829F9C10b',
+    decimals: 18,
+    fullName: 'KWHCOIN',
+  },
 link: {
     address: '0x514910771af9ca656af840dff83e8264ecf986ca',
     decimals: 18,
