@@ -45,7 +45,7 @@ import elet from './elet.png'
 import hype from './hype.png'
 import free from './free.png'
 import innbcl from './innbcl.png'
-import kwh from './kwh.png'
+import eurs from './eurs.png'
 
 export default {
   btc,
@@ -95,5 +95,5 @@ export default {
   hype,
   free,
   innbcl,
-  kwh,
+  eurs,
 }
