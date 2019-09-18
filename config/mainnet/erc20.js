@@ -29,6 +29,11 @@ elet: {
     decimals: 18,
     fullName: 'Elementeum',
   },      
+eurs: {
+    address: '0xdb25f211ab05b1c97d595516f45794528a807ad8',
+    decimals: 2,
+    fullName: 'Stasis Euro',
+  },
 ext: {
     address: '0xaf3b6cf6b25740af51cfebcaad5bae2ca12856f0',
     decimals: 18,
@@ -57,12 +62,7 @@ hot: {
 innbcl: {
     address: '0x8cc3e2bdc17682c622eb789eda23fbd6988c84da',
     decimals: 10,
-    fullName: 'Innovative Bioresearch Classic',
-  },
-kwh: {
-    address: '0xB8DdC930c2bAB6c71610A2BE639036E829F9C10b',
-    decimals: 18,
-    fullName: 'KWHCOIN',
+    fullName: 'InnovativeBioresearchClassic',
   },
 link: {
     address: '0x514910771af9ca656af840dff83e8264ecf986ca',
