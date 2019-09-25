@@ -19,6 +19,11 @@ dai: {
     decimals: 18,
     fullName: 'Dai StableCoin',
   },
+data: {
+    address: '0x0cf0ee63788a0849fe5297f3407f701e122cc023',
+    decimals: 18,
+    fullName: 'DATAcoin',
+  },
 dent: {
     address: '0x3597bfd533a99c9aa083587b074434e61eb0a258',
     decimals: 8,
