@@ -46,6 +46,7 @@ import hype from './hype.png'
 import free from './free.png'
 import innbcl from './innbcl.png'
 import eurs from './eurs.png'
+import data from './data.png'
 
 export default {
   btc,
@@ -96,4 +97,5 @@ export default {
   free,
   innbcl,
   eurs,
+  data,
 }
