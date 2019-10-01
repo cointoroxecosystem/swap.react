@@ -47,6 +47,7 @@ import free from './free.png'
 import innbcl from './innbcl.png'
 import eurs from './eurs.png'
 import data from './data.png'
+import btsg from './btsg.png'
 
 export default {
   btc,
@@ -98,4 +99,5 @@ export default {
   innbcl,
   eurs,
   data,
+  btsg,
 }
