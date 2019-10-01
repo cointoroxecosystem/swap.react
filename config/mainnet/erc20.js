@@ -14,6 +14,11 @@ bnt: {
     decimals: 18,
     fullName: 'Bancor Network Token',
   },
+btsg: {
+    address: '0x05079687d35b93538cbd59fe5596380cae9054a9',
+    decimals: 18,
+    fullName: 'BitSong',
+  },    
 dai: {
     address: '0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359',
     decimals: 18,
