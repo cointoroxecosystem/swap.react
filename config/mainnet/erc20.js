@@ -74,6 +74,11 @@ innbcl: {
     decimals: 10,
     fullName: 'InnovativeBioresearchClassic',
   },
+lif: {
+    address: '0xEB9951021698B42e4399f9cBb6267Aa35F82D59D',
+    decimals: 18,
+    fullName: 'Lif',
+  },
 link: {
     address: '0x514910771af9ca656af840dff83e8264ecf986ca',
     decimals: 18,
@@ -123,6 +128,11 @@ usdc: {
     address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
     decimals: 6,
     fullName: 'USDC',
+  },
+vlr: {
+    address: '0xc83ae87b42e1c64d968a4b422d121414efa449cd',
+    decimals: 18,
+    fullName: 'Valorem',
   },
 zil: {
     address: '0x05f4a42e251f2d52b8ed15e9fedaacfcef1fad27',
