@@ -48,6 +48,8 @@ import innbcl from './innbcl.png'
 import eurs from './eurs.png'
 import data from './data.png'
 import btsg from './btsg.png'
+import vlr from './vlr.png'
+import lif from './lif.svg'
 
 export default {
   btc,
@@ -100,4 +102,6 @@ export default {
   eurs,
   data,
   btsg,
+  vlr,
+  lif,
 }
