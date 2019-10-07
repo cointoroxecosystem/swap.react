@@ -50,6 +50,7 @@ import data from './data.png'
 import btsg from './btsg.png'
 import vlr from './vlr.png'
 import lif from './lif.svg'
+import eost from './eost.svg'
 
 export default {
   btc,
@@ -104,4 +105,5 @@ export default {
   btsg,
   vlr,
   lif,
+  eost,
 }
