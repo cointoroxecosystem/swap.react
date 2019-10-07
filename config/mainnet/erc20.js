@@ -39,6 +39,11 @@ elet: {
     decimals: 18,
     fullName: 'Elementeum',
   },      
+eost: {
+    address: '0x87210f1d3422ba75b6c40c63c78d79324dabcd55',
+    decimals: 18,
+    fullName: 'EOS Trust',
+  },      
 eurs: {
     address: '0xdb25f211ab05b1c97d595516f45794528a807ad8',
     decimals: 2,
