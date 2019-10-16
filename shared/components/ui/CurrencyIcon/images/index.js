@@ -51,6 +51,7 @@ import btsg from './btsg.png'
 import vlr from './vlr.png'
 import lif from './lif.svg'
 import eost from './eost.png'
+import p2px from './p2px.png'
 
 export default {
   btc,
@@ -106,4 +107,5 @@ export default {
   vlr,
   lif,
   eost,
+  p2px,
 }
