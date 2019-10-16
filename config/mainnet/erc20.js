@@ -104,6 +104,11 @@ omg: {
     decimals: 18,
     fullName: 'OmiseGo',
   },
+p2px: {
+    address: '0xcecede5A20645EAc6ca2032eeEb1063572D63c29',
+    decimals: 18,
+    fullName: 'P2P Global Network',
+  },    
 rep: {
     address: '0x1985365e9f78359a9B6AD760e32412f4a445E862',
     decimals: 18,
@@ -135,7 +140,7 @@ usdc: {
     fullName: 'USDC',
   },
 vlr: {
-    address: '0xc83ae87b42e1c64d968a4b422d121414efa449cd',
+    address: '0x99e0326245460cc89c72fd8ef5d35bc446725cb6',
     decimals: 18,
     fullName: 'Valorem',
   },
