@@ -104,6 +104,11 @@ omg: {
     decimals: 18,
     fullName: 'OmiseGo',
   },
+pixby: {
+    address: '0xB53e08B97724126Bda6d237B94F766c0b81C90fE',
+    decimals: 18,
+    fullName: 'PIXBY',
+  },
 p2px: {
     address: '0xcecede5A20645EAc6ca2032eeEb1063572D63c29',
     decimals: 18,
