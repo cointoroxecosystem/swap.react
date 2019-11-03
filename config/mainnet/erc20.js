@@ -124,6 +124,11 @@ snt: {
     decimals: 18,
     fullName: 'Status Network',
   },    
+spaz: {
+    address: '0x8F9bfe5b6A5C3fEa8c64ad41a5Cf6f60Ec4aa47c',
+    decimals: 8,
+    fullName: 'Swapcoinz',
+  },   
 swap: {
     address: '0x14a52cf6B4F68431bd5D9524E4fcD6F41ce4ADe9',
     decimals: 18,
