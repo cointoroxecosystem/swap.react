@@ -53,6 +53,7 @@ import lif from './lif.svg'
 import eost from './eost.png'
 import p2px from './p2px.png'
 import pixby from './pixby.png'
+import spaz from './spaz.png'
 
 export default {
   btc,
@@ -110,4 +111,5 @@ export default {
   eost,
   p2px,
   pixby,
+  spaz,
 }
