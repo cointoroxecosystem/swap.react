@@ -54,6 +54,8 @@ import eost from './eost.png'
 import p2px from './p2px.png'
 import pixby from './pixby.png'
 import spaz from './spaz.png'
+import frecnx from './frecnx.png'
+import ledu from './ledu.png'
 
 export default {
   btc,
@@ -112,4 +114,6 @@ export default {
   p2px,
   pixby,
   spaz,
+  frecnx,
+  ledu,
 }
