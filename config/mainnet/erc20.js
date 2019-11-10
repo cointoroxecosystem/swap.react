@@ -59,6 +59,11 @@ free: {
     decimals: 18,
     fullName: 'Free Coin',
   },      
+frecnx: {
+    address: '0xd8b8e1eca89da014e67fdbc2014eaa8e171079bf',
+    decimals: 18,
+    fullName: 'Freldo',
+  },   
 gnt: {
     address: '0xa74476443119A942dE498590Fe1f2454d7D4aC0d',
     decimals: 18,
@@ -78,6 +83,11 @@ innbcl: {
     address: '0x8cc3e2bdc17682c622eb789eda23fbd6988c84da',
     decimals: 10,
     fullName: 'InnovativeBioresearchClassic',
+  },
+ledu: {
+    address: '0x5b26c5d0772e5bbac8b3182ae9a13f9bb2d03765',
+    decimals: 18,
+    fullName: 'Education Ecosystem',
   },
 lif: {
     address: '0xEB9951021698B42e4399f9cBb6267Aa35F82D59D',
