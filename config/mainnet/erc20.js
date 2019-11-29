@@ -54,16 +54,16 @@ ext: {
     decimals: 18,
     fullName: 'ExoToken',
   },  
+fex: {
+    address: '0x47be0ef4327d0ee6b2ec2e9d2b9921a94de0165c',
+    decimals: 18,
+    fullName: 'FEX Exchange Token',
+  },      
 free: {
     address: '0x2f141ce366a2462f02cea3d12cf93e4dca49e4fd',
     decimals: 18,
     fullName: 'Free Coin',
-  },      
-frecnx: {
-    address: '0xd8b8e1eca89da014e67fdbc2014eaa8e171079bf',
-    decimals: 18,
-    fullName: 'Freldo',
-  },   
+  },       
 gnt: {
     address: '0xa74476443119A942dE498590Fe1f2454d7D4aC0d',
     decimals: 18,
