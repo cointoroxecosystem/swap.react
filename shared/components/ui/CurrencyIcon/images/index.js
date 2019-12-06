@@ -56,6 +56,7 @@ import pixby from './pixby.png'
 import spaz from './spaz.png'
 import ledu from './ledu.png'
 import fex from './fex.png'
+import aet from './aet.png'
 
 export default {
   btc,
@@ -116,4 +117,5 @@ export default {
   spaz,
   ledu,
   fex,
+  aet,
 }
