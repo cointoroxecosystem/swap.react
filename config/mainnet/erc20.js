@@ -4,6 +4,11 @@ hype: {
     decimals: 18,
     fullName: 'HYPE Token',
   },
+aet: {
+    address: '0x8c9E4CF756b9d01D791b95bc2D0913EF2Bf03784',
+    decimals: 18,
+    fullName: 'AERO Token',
+  },
 bat: {
     address: '0x0d8775f648430679a709e98d2b0cb6250d2887ef',
     decimals: 18,
