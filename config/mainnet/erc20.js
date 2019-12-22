@@ -79,6 +79,11 @@ gusd: {
     decimals: 2,
     fullName: 'Gemini dollar',
   },
+hex: {
+    address: '0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39',
+    decimals: 8,
+    fullName: 'HEX',
+  },
 hot: {
     address: '0x6c6ee5e31d828de241282b9606c8e98ea48526e2',
     decimals: 18,
