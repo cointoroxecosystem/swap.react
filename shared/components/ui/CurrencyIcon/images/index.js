@@ -57,6 +57,7 @@ import spaz from './spaz.png'
 import ledu from './ledu.png'
 import fex from './fex.png'
 import aet from './aet.png'
+import hex from './hex.png'
 
 export default {
   btc,
@@ -118,4 +119,5 @@ export default {
   ledu,
   fex,
   aet,
+  hex,
 }
