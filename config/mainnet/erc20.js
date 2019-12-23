@@ -9,6 +9,11 @@ aet: {
     decimals: 18,
     fullName: 'AERO Token',
   },
+amn: {
+    address: '0x737f98ac8ca59f2c68ad658e3c3d8c8963e40a4c',
+    decimals: 18,
+    fullName: 'Amon',
+  },
 bat: {
     address: '0x0d8775f648430679a709e98d2b0cb6250d2887ef',
     decimals: 18,
