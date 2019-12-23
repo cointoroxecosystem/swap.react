@@ -58,6 +58,7 @@ import ledu from './ledu.png'
 import fex from './fex.png'
 import aet from './aet.png'
 import hex from './hex.png'
+import amn from './amn.png'
 
 export default {
   btc,
@@ -120,4 +121,5 @@ export default {
   fex,
   aet,
   hex,
+  amn,
 }
