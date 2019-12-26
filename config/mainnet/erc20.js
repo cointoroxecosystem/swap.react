@@ -124,6 +124,11 @@ mkr: {
     decimals: 18,
     fullName: 'Maker',
   },
+myd: {
+    address: '0x98a75a742ede320848c5f4fd00f194b5889ba443',
+    decimals: 18,
+    fullName: 'Manage Your Debt',
+  },
 omg: {
     address: '0xd26114cd6EE289AccF82350c8d8487fedB8A0C07',
     decimals: 18,
