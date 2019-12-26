@@ -59,6 +59,7 @@ import fex from './fex.png'
 import aet from './aet.png'
 import hex from './hex.png'
 import amn from './amn.png'
+import myd from './myd.png'
 
 export default {
   btc,
@@ -122,4 +123,5 @@ export default {
   aet,
   hex,
   amn,
+  myd,
 }
