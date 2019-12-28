@@ -395,15 +395,6 @@ export default class Row extends Component {
                     </span>
                   </Fragment>
                 ) }
-                { currency === 'BCH' && unconfirmedBalance !== 0 && (
-                  <Fragment>
-                    <br />
-                    <span styleName="unconfirmedBalance">
-                      <FormattedMessage id="RowWallet181" defaultMessage="Unconfirmed balance" />
-                      {unconfirmedBalance} {' '}
-                    </span>
-                  </Fragment>
-                ) }
                 { currency === 'LTC' && unconfirmedBalance !== 0 && (
                   <Fragment>
                     <br />
